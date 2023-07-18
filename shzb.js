@@ -4,24 +4,24 @@
 在线观看地址: http://www.shenhu.info/
 邀请码: 111666
 脚本作者：伟人
-作者QQ:55749353
-更新时间：2023-06-09
-问题反馈：QQ+55749353
-作者忠告: 建议使用柔纸巾！
-QQ会员群：PY
-TG反馈群：https://t.me/WeiRenOvO
-TG频道群：https://t.me/WeiRenQAQ
-使用声明：⚠️此脚本仅供学习与交流，请勿转载与贩卖！
+#!name=神户直播
+#!desc=神户直播
+#!icon=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Pokemon/Pokemon-1006.png
+#!author=胖丁
+#!homepage=https://www.pokemon.cn/play/pokedex/0039
+#!url=https://raw.githubusercontent.com/conghua11/QuantumultX/main/shzb.js
+
+
+
 **************************************
 
 [rewrite_local]
 
 #神户直播
 
-^http[s]?:\/\/.*\.liuniukeji\.(heshuangde|cdwksjx)\.com\/index\.php\/App\/(Account\/Login|User\/Info|Index\/Update|Host\/Info).*$ url script-response-body https://raw.githubusercontent.com/WeiRen0/Scripts/main/shzb.js
+^http[s]?:\/\/.*\.liuniukeji\.(heshuangde|cdwksjx)\.com\/index\.php\/App\/(Account\/Login|User\/Info|Index\/Update|Host\/Info).*$ url script-response-body https://raw.githubusercontent.com/conghua11/loon/main/shzb.plugin
 ^http[s]?:\/\/gitee\.com\/ReactJSTeams\/next.js\/raw\/master\/examples\/nested-components\/.gitignore url reject-200
-^http[s]?:\/\/.*\.liuniukeji\.(heshuangde|cdwksjx)\.com\/index\.php\/App\/User\/Info.*$ url script-request-header https://raw.githubusercontent.com/WeiRen0/Scripts/main/shtk.js
-
+^http[s]?:\/\/.*\.liuniukeji\.(heshuangde|cdwksjx)\.com\/index\.php\/App\/User\/Info.*$ url script-request-header https://raw.githubusercontent.com/conghua11/scripts/main/shzb.js
 [mitm]
 
 hostname = *cdwksjx*,*heshuangde*,gitee.com
