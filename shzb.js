@@ -3,7 +3,7 @@
 
 脚本功能：神户 解锁VIP直播0.1
 
-在线观看地址: http://www.shenhu.info/
+下载地址: http://www.shenhu.info/
 
 邀请码: 111666
 
