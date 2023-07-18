@@ -1,15 +1,15 @@
 /***************************************
 
+
 脚本功能：神户 解锁VIP直播0.1
+
 在线观看地址: http://www.shenhu.info/
+
 邀请码: 111666
+
 脚本作者：伟人
-#!name=神户直播
-#!desc=神户直播
-#!icon=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/Pokemon/Pokemon-1006.png
-#!author=胖丁
-#!homepage=https://www.pokemon.cn/play/pokedex/0039
-#!url=https://raw.githubusercontent.com/conghua11/QuantumultX/main/shzb.js
+
+脚本链接：https://raw.githubusercontent.com/conghua11/QuantumultX/main/shzb.js
 
 
 
