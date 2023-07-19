@@ -1,9 +1,19 @@
 /****************************
-// Quantumult-X
+项目名称：酷我音乐
+脚本来源：https://raw.githubusercontent.com/conghua11/QuantumultX/main/kuwo.js
 [rewrite_local]
-
+# 酷我音乐_AdBlock
+^https?:\/\/rich\.kuwo\.cn\/AdService\/kaiping\/.+ url reject
+# 酷我音乐_AdBlock
+^https?:\/\/.+\.kwcdn\.kuwo\.cn\/star\/upload\/.+ url reject
+# 酷我音乐_AdBlock
+^https?:\/\/mobilead\.kuwo\.cn\/EcomResourceServer\/Ad url reject
+# 酷我听书_Blockad
+https?:\/\/audiobookpay\.kuwo\.cn/a\.p\?op=get_advertright url reject-dict
+# 酷我听书_Blockad
+https?:\/\/omp-audiobookpay\.lrts\.me\/a\.p\?op=get_advertright url reject-dict
+# 酷我音乐_会员
 ^.*?kuwo\.cn/music\.pay\?newver=3$ ^POST url-and-header request-body (?<=&ids\=)\d+ request-body 4974150
-
 ^(?!.*img).*?(kuwo\.cn|lrts\.me)(/vip|/openapi)?(/enc|/v[1,2]/(user(/vip\?_t|base)|theme|sysinfo|api(?!/search)|album)|/kuwopay/vip-tab/setting|tab|/a.p$|/(EcomResource|(Mobile)?Ad)Serv(er|ice)) url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/main/kuwo.js
 
 [mitm]
