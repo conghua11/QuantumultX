@@ -4,6 +4,7 @@
 
 脚本作者：chxm1023
 
+脚本地址：https://raw.githubusercontent.com/conghua11/QuantumultX/main/caiyun.js
 
 **************************************
 
