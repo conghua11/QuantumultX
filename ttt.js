@@ -1,10 +1,10 @@
 [rewrite_local]
 
-^http[s]?:\/\/.*((50(aa|ab|apia)pi|xtt.*)\.com|tbrapi\.org)\/pwa\.php\/api\/(user\/userinfo|MvDetail\/(detail|xiao_detail)|home\/(getOpenAdsAndVersion|appcenter)|system\/getad)$ url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/main/ttt.js
+^http[s]?:\/\/(h5play|10play|120play|long)\.(snowing|beibeini3|pili01a|fuhuida|riyufanyi).*\/(videos.|watch|static|upload|watch[0-9]+)\/.*\/.*\.m3u8\?auth_key.*$ url script-request-header https://raw.githubusercontent.com/conghua11/QuantumultX/main/ttt.js
 
 [mitm] 
 
-hostname = *.snowing.ren, *.beibeini3.cn, *.pili01a.net, *.ttt01a.net, *50a*,*bmafdxt*,*psovzwr*,*yxlauhm*,*yiqiapi*,*jiujiao*,*myb*api*,*hichatapi*,*tbrapi*,*wmqapi*,*gvlan*,*ksapi*,*nbpqfxr*,*91av*,*xtt*,*dyweb*,*argaxqn*,*eoeicmg*
+hostname = *snowing*, *beibeini3*, *pili01a*, *fuhuida*, *riyufanyi*
 
 
 *******************************/
