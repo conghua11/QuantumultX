@@ -1,6 +1,6 @@
 [rewrite_local]
 
-^http[s]?:\/\/(h5play|10play|120play|long)\.(snowing|beibeini3|pili01a|fuhuida|riyufanyi).*\/(videos.|watch|static|upload|watch[0-9]+)\/.*\/.*\.m3u8\?auth_key.*$ url script-request-header https://raw.githubusercontent.com/conghua11/QuantumultX/main/ttt.js
+^http[s]?:\/\/(h5play|10play|120play|long)\.(snowing|beibeini3|pili01a|fuhuida|riyufanyi).*\/(videos.|watch|static|upload|watch[0-9]+)\/.*\/.*\.m3u8\?auth_key.*$ url script-request-header https://raw.githubusercontent.com/conghua11/QuantumultX/main/m3u8.js
 
 [mitm] 
 
