@@ -1,11 +1,12 @@
 [rewrite_local]
 
 ^http[s]?:\/\/(h5play|10play|120play|long|sw-vcapi)\.(snowing|beibeini3|pili01a|fuhuida|riyufanyi|hncke).*\/(api|videos.|watch|static|upload|watch[0-9]+)\/.*\/.*\.m3u8\?auth_key.*$ url script-request-header https://raw.githubusercontent.com/conghua11/QuantumultX/main/m3u8.js
-^http[s]?:\/\/(sw-\vcapi)\.(hncke).*\/(api)\/.*\/.*\/.*\/.*\/.*\.m3u8\?sign.*$ url script-request-header https://raw.githubusercontent.com/conghua11/QuantumultX/main/m3u8.js
+^http[s]?:\/\/(sw\-vcapi)\.(hncke).*\/(api)\/.*\/.*\/.*\/.*\/.*\.m3u8\?sign.*$ url script-request-header https://raw.githubusercontent.com/conghua11/QuantumultX/main/m3u8.js
 
 # 通杀所有
-^(https?:\/\/)(?!long|sw-\vcapi)([^./]+\.)*(hncke.top|longyuandingyi.com|zihzot.com|snowing.ren|vzcnqmr.cn|beibeini3.cn|pili01a.net|hhclyjz.cn|bhhcdou.cn|xuxivwx.cn|sdtuxyh.cn|kngpdsz.cn|sugugaj.cn|mqqjrv.com)(\/.*)? url 302 $1long.$3$4
-******************************************/
+^(https?:\/\/)(?!long)([^./]+\.)*(longyuandingyi.com|zihzot.com|snowing.ren|vzcnqmr.cn|beibeini3.cn|pili01a.net|hhclyjz.cn|bhhcdou.cn|xuxivwx.cn|sdtuxyh.cn|kngpdsz.cn|sugugaj.cn|mqqjrv.com)(\/.*)? url 302 $1long.$3$4
+  ^(https?:\/\/)(sw\-vcapi)*(hncke)(\/.*)? url 302 $1long.$3$4
+******************************************/******************************************/
 [mitm] 
 
 hostname = *50a*,*bmafdxt*,*psovzwr*,*yxlauhm*,*yiqiapi*,*jiujiao*,*myb*api*,*hichatapi*,*tbrapi*,*wmqapi*,*gvlan*,*ksapi*,*nbpqfxr*,*91av*,*xtt*,*dyweb*,*argaxqn*,*eoeicmg*,*.longyuandingyi.com,*.zihzot.com,*.snowing.ren,*.vzcnqmr.cn,*beibeini3.cn,*.pili01a.net,*.hhclyjz.cn, *.bhhcdou.cn, *.xuxivwx.cn, *.sdtuxyh.cn, *.kngpdsz.cn, *.sugugaj.cn, *.mqqjrv.com, *.h5308084.top
