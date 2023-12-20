@@ -1,6 +1,7 @@
-# 绿色产业链通杀
+
 
 [rewrite_local]
+  
 ^http[s]?:\/\/(h5play|10play|120play|long)\.(snowing|beibeini3|pili01a|fuhuida|riyufanyi).*\/(videos.|watch|static|upload|watch[0-9]+)\/.*\/.*\.m3u8\?auth_key.*$ url script-request-header https://raw.githubusercontent.com/WeiRen0/Scripts/main/m3u8.js
 # 50度灰/汤头条/他趣
 ^http[s]?:\/\/.*((50(aa|ab|apia)pi|xtt.*)\.com|tbrapi\.org)\/pwa\.php\/api\/(user\/userinfo|MvDetail\/(detail|xiao_detail)|home\/(getOpenAdsAndVersion|appcenter)|system\/getad)$ url script-response-body https://raw.githubusercontent.com/WeiRen0/Scripts/main/m3u8.js
@@ -14,7 +15,7 @@
 ^http[s]?:\/\/.*(dyweb|argaxqn|eoeicmg).+\/pwa\.php$ url script-response-body https://raw.githubusercontent.com/WeiRen0/Scripts/main/m3u8.js
 # 通杀所有
 ^(https?:\/\/)(?!long)([^./]+\.)*(longyuandingyi.com|zihzot.com|snowing.ren|vzcnqmr.cn|beibeini3.cn|pili01a.net|hhclyjz.cn|bhhcdou.cn|xuxivwx.cn|sdtuxyh.cn|kngpdsz.cn|sugugaj.cn|mqqjrv.com|gnikvh.com)(\/.*)? url 302 $1long.$3$4
-******************************************/
+
 [mimt]
 hostname = *50a*,*bmafdxt*,*psovzwr*,*yxlauhm*,*yiqiapi*,*jiujiao*,*myb*api*,*hichatapi*,*tbrapi*,*wmqapi*,*gvlan*,*ksapi*,*nbpqfxr*,*91av*,*xtt*,*dyweb*,*argaxqn*,*eoeicmg*,*.longyuandingyi.com,*.zihzot.com,*.snowing.ren,*.vzcnqmr.cn,*beibeini3.cn,*.pili01a.net,*.hhclyjz.cn, *.bhhcdou.cn, *.xuxivwx.cn, *.sdtuxyh.cn, *.kngpdsz.cn, *.sugugaj.cn, *.mqqjrv.com, *.gnikvh.com
 
