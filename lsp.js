@@ -1,25 +1,4 @@
-/*
- *
- *
-脚本功能：m3u8视频获取完整版地址
-软件版本：&&
-下载地址：&&
-脚本作者：伟人
-更新时间：2023.07.28
-电报频道：https://t.me/WeiRenQAQ
-问题反馈：https://t.me/WeiRenOvO
-使用声明：⚠️此脚本仅供学习与交流，
-        请勿转载与贩卖！⚠️⚠️⚠️
-*******************************
-[rewrite_local]
-# > m3u8获取完整版地址
-^http[s]?:\/\/long.(fuhuida|riyufanyi).*\/(videos.|watch|static|upload|watch[0-9]+)\/.*\/.*\.m3u8\?auth_key.*$ url script-request-header https://raw.githubusercontent.com/WeiRen0/Scripts/main/m3u8.js
 
-[mitm] 
-hostname = *fuhuida*,*riyufanyi*
-*
-*
-*/
 
 
 
