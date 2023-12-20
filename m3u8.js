@@ -1,17 +1,17 @@
 # 绿色产业链通杀
 
 [rewrite_local]
-^http[s]?:\/\/(h5play|10play|120play|long)\.(snowing|beibeini3|pili01a|fuhuida|riyufanyi).*\/(videos.|watch|static|upload|watch[0-9]+)\/.*\/.*\.m3u8\?auth_key.*$ url script-request-header https://raw.githubusercontent.com/conghua11/QuantumultX/main/m3u8.js
+^http[s]?:\/\/(h5play|10play|120play|long)\.(snowing|beibeini3|pili01a|fuhuida|riyufanyi).*\/(videos.|watch|static|upload|watch[0-9]+)\/.*\/.*\.m3u8\?auth_key.*$ url script-request-header https://raw.githubusercontent.com/WeiRen0/Scripts/main/m3u8.js
 # 50度灰/汤头条/他趣
-^http[s]?:\/\/.*((50(aa|ab|apia)pi|xtt.*)\.com|tbrapi\.org)\/pwa\.php\/api\/(user\/userinfo|MvDetail\/(detail|xiao_detail)|home\/(getOpenAdsAndVersion|appcenter)|system\/getad)$ url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/main/m3u8.js
+^http[s]?:\/\/.*((50(aa|ab|apia)pi|xtt.*)\.com|tbrapi\.org)\/pwa\.php\/api\/(user\/userinfo|MvDetail\/(detail|xiao_detail)|home\/(getOpenAdsAndVersion|appcenter)|system\/getad)$ url script-response-body https://raw.githubusercontent.com/WeiRen0/Scripts/main/m3u8.js
 # 91短视频/微密圈
-^http[s]?:\/\/.*(yiqiapi|jiujiao|myb[0-9]+api|wmqapi|psovzwr|bmafdxt|yxlauhm).*\/pwa\.php$ url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/main/m3u8.js
+^http[s]?:\/\/.*(yiqiapi|jiujiao|myb[0-9]+api|wmqapi|psovzwr|bmafdxt|yxlauhm).*\/pwa\.php$ url script-response-body https://raw.githubusercontent.com/WeiRen0/Scripts/main/m3u8.js
 # 撸先生
-^http[s]?:\/\/.*hichatapi.+\/api\.php$ url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/main/m3u8.js
+^http[s]?:\/\/.*hichatapi.+\/api\.php$ url script-response-body https://raw.githubusercontent.com/WeiRen0/Scripts/main/m3u8.js
 # 小蓝视频/快手
-^http[s]?:\/\/.*(gvlan|ksapi|nbpqfxr).*pwa\.php.*(home\/getConfig|user(s)?\/getBaseInfo|(mv|manhua|story)\/detail|mv\/(pwa_main|listOfFeature|getFeature)|ChargeVideo\/(upIndex|vipIndex|recommend))$ url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/main/m3u8.js
+^http[s]?:\/\/.*(gvlan|ksapi|nbpqfxr).*pwa\.php.*(home\/getConfig|user(s)?\/getBaseInfo|(mv|manhua|story)\/detail|mv\/(pwa_main|listOfFeature|getFeature)|ChargeVideo\/(upIndex|vipIndex|recommend))$ url script-response-body https://raw.githubusercontent.com/WeiRen0/Scripts/main/m3u8.js
 # 抖阴Porn
-^http[s]?:\/\/.*(dyweb|argaxqn|eoeicmg).+\/pwa\.php$ url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/main/m3u8.js
+^http[s]?:\/\/.*(dyweb|argaxqn|eoeicmg).+\/pwa\.php$ url script-response-body https://raw.githubusercontent.com/WeiRen0/Scripts/main/m3u8.js
 # 通杀所有
 ^(https?:\/\/)(?!long)([^./]+\.)*(longyuandingyi.com|zihzot.com|snowing.ren|vzcnqmr.cn|beibeini3.cn|pili01a.net|hhclyjz.cn|bhhcdou.cn|xuxivwx.cn|sdtuxyh.cn|kngpdsz.cn|sugugaj.cn|mqqjrv.com|gnikvh.com)(\/.*)? url 302 $1long.$3$4
 ******************************************/
