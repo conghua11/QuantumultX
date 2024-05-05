@@ -4,7 +4,7 @@
 #!update = 2024-05-05 16:00
 
 # 解锁VIP
-^https:\/\/www\.123pan\.com\/b\/api\/share\/download\/info url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/main/123pan.js
+^https:\/\/www\.123pan\.com\/api\/user\/info? url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/main/123pan.js
 
 hostname = 123pan.com
 
