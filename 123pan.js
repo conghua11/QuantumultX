@@ -2,10 +2,10 @@
 #!desc = 测试本地VIP
 #!author = 小白
 #!update = 2024-05-05 16:00
-
+[rewrite_local]
 # 解锁VIP
 ^https:\/\/www\.123pan\.com\/api\/user\/info\?auth-key=\.*? url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/main/123pan.js
-
+[mitm]
 hostname = 123pan.com
 
 
