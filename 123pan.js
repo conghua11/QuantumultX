@@ -17,10 +17,10 @@ $task.fetch({
             if ('data' in data && 'Vip' in data.data) {
                 data.data.Vip = true;
                 data.data.VipExpire = '2099-12-31 23:59:59';
-            }
-            $done({
+                $done({
                 body: JSON.stringify(data)
-            });
+                })
+            }
         } else {
             console.log('解锁失败', response.statusCode);
             $done(response);
