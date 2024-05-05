@@ -14,9 +14,11 @@ $task.fetch({
     handler: function (response){
         if (response.statusCode === 200){
             var data = JSON.parse(response.body);
+            console.log('修改前:\n',data)
             if ('data' in data && 'Vip' in data.data) {
                 data.data.Vip = true;
                 data.data.VipExpire = '2099-12-31 23:59:59';
+                console.log('修改后:\n',data)
                 $done({
                 body: JSON.stringify(data)
                 })
