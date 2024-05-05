@@ -16,7 +16,7 @@ $task.fetch({
             var data = JSON.parse(response.body);
             if ('data' in data && 'Vip' in data.data) {
                 data.data.Vip = true;
-                data.data.VipExpire = '2099-12-31';
+                data.data.VipExpire = '2099-12-31 23:59:59';
             }
             $done({
                 body: JSON.stringify(data)
