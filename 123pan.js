@@ -9,6 +9,36 @@
 hostname = www.123pan.com
 
 var body = JSON.parse($response.body)
-body.data.Vip = true;
-body.data.VipExpire = '2099-12-31 23:59:59';
+body.data ={
+    "IsShowAdvertisement" : false,
+        "VipExplain" : "",
+        "SpaceTemp" : 0,
+        "Mail" : "",
+        "UserVipDetailInfos" : [
+
+    ],
+        "SpacePermanent" : 2199023255552,
+        "FileCount" : 242,
+        "ContinuousPaymentDate" : "2099-01-01 08:00:00",
+        "IsAuthentication" : true,
+        "SpaceUsed" : 183317505265,
+        "ContinuousPaymentAmount" : 0,
+        "VipLevel" : 0,
+        "UID" : 1636340,
+        "GrowSpaceAddCount" : 0,
+        "IsBeforeBuyVipProduct" : true,
+        "BindWechat" : false,
+        "ContinuousPaymentDuration" : 0,
+        "SpaceTempExpr" : "0001-01-01T00:00:00+00:00",
+        "Nickname" : "小白测试",
+        "HeadImage" : "https://statics.123pan.com/static-by-custom/default_avatar.png",
+        "StraightLink" : true,
+        "VipExpire" : "2099-01-01 08:00:00",
+        "ContinuousPayment" : true,
+        "SpaceBuy" : false,
+        "SignType" : 0,
+        "Vip" : true,
+        "Passport" : 13022632289,
+        "OpenLink" : 0
+},
 $done({body:JSON.stringify(body)})
