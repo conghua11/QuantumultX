@@ -1,31 +1,14 @@
 #!name = 123yunpan
 #!desc = 测试本地VIP
 #!author = 小白
-#!update = 2024-05-05 16:00
+#!update = 2024-05-07 18:00
 [rewrite_local]
 # 解锁VIP
 ^https:\/\/www\.123pan\.com\/api\/user\/info\?auth-key=\.*? url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/main/123pan.js
 [mitm]
-hostname = 123pan.com
+hostname = www.123pan.com
 
-
-$task.fetch({
-    httpRequest: $request,
-    handler: function (response){
-        if (response.statusCode === 200){
-            var data = JSON.parse(response.body);
-            console.log('修改前:\n',data)
-            if ('data' in data && 'Vip' in data.data) {
-                data.data.Vip = true;
-                data.data.VipExpire = '2099-12-31 23:59:59';
-                console.log('修改后:\n',data)
-                $done({
-                body: JSON.stringify(data)
-                })
-            }
-        } else {
-            console.log('解锁失败', response.statusCode);
-            $done(response);
-        }
-    }
-});
+var body = JSON.parse($response.body)
+body.data.Vip = true;
+body.data.VipExpire = '2099-12-31 23:59:59';
+$done({body:JSON.stringify(body)})
