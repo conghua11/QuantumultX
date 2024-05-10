@@ -13,7 +13,7 @@ hostname = www.123pan.com
 
 **************************************/
 
-
+var data = $response.body
 console.log('开始运行:')
 var body = JSON.parse($response.body)
 body.data ={
@@ -50,4 +50,3 @@ body.data ={
 },
 console.log('运行结束')
 $done({body:JSON.stringify(body)})
-console.log('运行结束')
