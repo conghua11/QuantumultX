@@ -17,8 +17,7 @@ hostname = www.123pan.com
 **************************************/
 
 
-var data = $response.body
-console.log('开始运行:\n',data)
+console.log('开始运行!!!')
 var body = JSON.parse($response.body)
 body.data ={
     "IsShowAdvertisement" : false,
@@ -28,7 +27,7 @@ body.data ={
         "UserVipDetailInfos" : [
 
     ],
-        "SpacePermanent" : 2199023255552,
+        "SpacePermanent" : 10995116277760,
         "FileCount" : 242,
         "ContinuousPaymentDate" : "2099-01-01 08:00:00",
         "IsAuthentication" : true,
@@ -52,5 +51,6 @@ body.data ={
         "Passport" : 13022632289,
         "OpenLink" : 0
 },
+console.log('运行结束!!!')
 $done({body:JSON.stringify(body)})
-console.log('运行结束')
+
