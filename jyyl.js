@@ -1,17 +1,17 @@
 /**************************************
 
-#!name = VPN网络助手
+#!name = 剧有引力
 #!desc = 解锁本地VIP
 #!author = 小白
 #!date = 2024-05-10
 [rewrite_local]
-^https:\/\/api\.mnckj\.com\/server\/user\/info url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/main/vpn.js
+^https:\/\/api\.mnckj\.com\/server\/user\/info url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/main/jyyl.js
 
 [mitm]
 hostname = api.mnckj.com
 
 [Script]
-http-response ^https:\/\/api\.mnckj\.com\/server\/user\/info requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/vpn.js
+http-response ^https:\/\/api\.mnckj\.com\/server\/user\/info requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/jyyl.js
 [Mitm]
 hostname = api.mnckj.com
 
