@@ -4,13 +4,10 @@
 #!desc = 测试本地VIP
 #!author = 小白
 #!date = 2024-05-10
-[rewrite_local]
-^https:\/\/www\.123pan\.com\/api\/user\/info\?auth-key=\.*? url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/main/123pan.js
-[mitm]
-hostname = www.123pan.com
 
 [Script]
 http-response ^https:\/\/www\.123pan\.com\/api\/user\/info\?auth-key=\.*? response-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/123pan.js
+
 [Mitm]
 hostname = www.123pan.com
 
@@ -40,7 +37,7 @@ body.data ={
         "IsBeforeBuyVipProduct" : true,
         "BindWechat" : false,
         "ContinuousPaymentDuration" : 5,
-        "SpaceTempExpr" : "2099-01-01T00:00:00+00:00",
+        "SpaceTempExpr" : "2099-01-01T08:00:00+00:00",
         "Nickname" : "小白测试",
         "HeadImage" : "https://statics.123pan.com/static-by-custom/default_avatar.png",
         "StraightLink" : true,
