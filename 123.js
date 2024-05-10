@@ -22,8 +22,8 @@ var body = JSON.parse($response.body)
 body.data = {
     "list" : [
       {
-        "expireAt" : "2099-01-01T00:00:00+00:00",
-        "itemType" : 7,
+        "expireAt" : "",
+        "itemType" : 3,
         "addSpace" : 10995116277760
       }
     ]
