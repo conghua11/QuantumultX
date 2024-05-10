@@ -17,8 +17,8 @@ hostname = www.123pan.com
 **************************************/
 
 
-
-console.log('开始运行:\n', $response.body)
+var data = $response.body
+console.log('开始运行:\n',data)
 var body = JSON.parse($response.body)
 body.data ={
     "IsShowAdvertisement" : false,
