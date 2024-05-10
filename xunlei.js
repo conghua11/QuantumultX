@@ -11,7 +11,7 @@ https://xluser-ssl.xunlei.com/xluser.core.login/v3/getuserinfo url script-respon
 hostname = xluser-ssl.xunlei.com
 
 [Script]
-http-response ^https:\/\/xluser-ssl\.xunlei\.com\/xluser\.core\.login\/v1\/etuserinfo requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/xunlei.js
+http-response https://xluser-ssl.xunlei.com/xluser.core.login/v3/getuserinfo requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/xunlei.js
 
 [Mitm]
 hostname = xluser-ssl.xunlei.com
