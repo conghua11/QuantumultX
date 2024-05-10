@@ -13,6 +13,7 @@ http-response ^https:\/\/www\.123pan\.com\/api\/user\/info\?auth-key=\.*? respon
 [Mitm]
 hostname = www.123pan.com
 **************************************/
+console.log('开始运行')
 var body = JSON.parse($response.body)
 body.data ={
     "IsShowAdvertisement" : false,
@@ -47,3 +48,4 @@ body.data ={
         "OpenLink" : 0
 },
 $done({body:JSON.stringify(body)})
+console.log('运行结束')
