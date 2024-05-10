@@ -28,7 +28,7 @@ body.data ={
         "UserVipDetailInfos" : [
 
     ],
-        "SpacePermanent" : 1099511627,760,
+        "SpacePermanent" : 1099511627760,
         "FileCount" : 242,
         "ContinuousPaymentDate" : "2299-12-01 08:00:00",
         "IsAuthentication" : true,
