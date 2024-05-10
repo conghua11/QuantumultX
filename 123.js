@@ -5,12 +5,12 @@
 #!author = 小白
 #!date = 2024-05-10
 [rewrite_local]
-^https:\/\/www\.123pan\.com\/api\/user\/info\?auth-key=\.*? url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/main/123pan.js
+^https:\/\/www\.123pan\.com\/api\/user\/info\?auth-key=\.*? url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/main/123.js
 [mitm]
 hostname = www.123pan.com
 
 [Script]
-http-response ^https:\/\/www\.123pan\.com\/api\/user\/info\?auth-key=\.*? response-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/123pan.js
+http-response ^https:\/\/www\.123pan\.com\/api\/user\/info\?auth-key=\.*? response-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/123.js
 [Mitm]
 hostname = www.123pan.com
 
