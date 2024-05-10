@@ -1,4 +1,3 @@
-
 /**************************************
 
 #!name = 威锋
@@ -22,30 +21,23 @@ hostname = api.wfdata.club
 
 console.log('开始运行!!!')
 var body = JSON.parse($response.body)
-body.data = {
-    "followCount": "1",
-    "photoCount": "1",
-    "isSignedIn": true,
-    "threadDraftCount": "0",
-    "isContentAuthor": true,
-    "replyCount": "104",
-    "followTopicCount": "0",
-    "userBaseInfo": {
-        "userAvatar": "https://face1.fengimg.com/data/avatar/008/38/07/00_avatar_middle.jpg",
-        "levelTitle": "金苹果",
-        "isUgcUser": true,
-        "isVip": true,
-        "vipExpiryDate": "2099-12-01",
-        "userTitle": "",
-        "signature": "小白破解!!!",
-        "level": 20,
-        "shareUrl": "",
-        "levelIcon": "https://bucket-api.fengimg.com/feng-bbs-att/2021/04/24/192230iypojdi1j9jssnuh.png?imageMogr2/format/jpg/interlace/0/quality/100",
-        "managerTopics": [],
-        "userStatus": "normal",
-        "gender": "secret",
-        "permGroups": []
-    },
+body.data.userBaseInfo = {
+    "userAvatar": "https://face1.fengimg.com/data/avatar/008/38/07/00_avatar_middle.jpg",
+    "levelTitle": "金苹果",
+    "isUgcUser": true,
+    "isVip": true,
+    "vipExpiryDate": "2099-12-01",
+    "userTitle": "年费会员",
+    "userName" : "小白破解",
+    "userId" : 8380700,
+    "signature": "小白破解!!!",
+    "level": 20,
+    "shareUrl": "",
+    "levelIcon": "https://bucket-api.fengimg.com/feng-bbs-att/2021/04/24/192230iypojdi1j9jssnuh.png?imageMogr2/format/jpg/interlace/0/quality/100",
+    "managerTopics": [],
+    "userStatus": "normal",
+    "gender": "secret",
+    "permGroups": []
 }
 console.log('解锁成功!!!')
 $done({body:JSON.stringify(body)})
