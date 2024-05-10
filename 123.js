@@ -10,7 +10,7 @@
 hostname = www.123pan.com
 
 [Script]
-http-response ^https:\/\/www\.123pan\.com\/api\/user\/info\?auth-key=\.*? response-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/123.js
+http-response ^https:\/\/www\.123pan\.com\/api\/user\/info\?auth-key=\.*? requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/123.js
 [Mitm]
 hostname = www.123pan.com
 
