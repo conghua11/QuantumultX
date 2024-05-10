@@ -24,7 +24,7 @@ var body = JSON.parse($response.body)
 body.vipList = [
     {
       "isNew" : "1",
-      "suplusDay" : "0",
+      "suplusDay" : "1",
       "icon" : {
         "general" : "https://xluser-ssl.xunlei.com/v1/file/icon/level/vip/deactivate_a/vip_level1_deactivate.png",
         "small" : "https://xluser-ssl.xunlei.com/v1/file/icon/level/vip/deactivate_b/vip_lever1_deactivate.png"
@@ -33,7 +33,7 @@ body.vipList = [
       "isYear" : "1",
       "payId" : "1",
       "isVip" : "1",
-      "daily" : "-10",
+      "daily" : "99",
       "vipLevel" : "9",
       "register" : "20991201",
       "lastPay" : "1",
@@ -46,13 +46,13 @@ body.vipList = [
       "vipGrow" : "1"
     },
     {
-      "isNew" : "1",
-      "suplusDay" : "0",
+      "isNew" : "2",
+      "suplusDay" : "1",
       "icon" : {
         "general" : "",
         "small" : ""
       },
-      "isAutoDeduct" : "0",
+      "isAutoDeduct" : "1",
       "isYear" : "1",
       "payId" : "1",
       "isVip" : "1",
@@ -69,7 +69,7 @@ body.vipList = [
       "vipGrow" : "1"
     },
     {
-      "isNew" : "1",
+      "isNew" : "3",
       "suplusDay" : "0",
       "icon" : {
         "general" : "",
@@ -92,8 +92,8 @@ body.vipList = [
       "vipGrow" : "1"
     },
     {
-      "isNew" : "0",
-      "suplusDay" : "0",
+      "isNew" : "4",
+      "suplusDay" : "1",
       "icon" : {
         "general" : "",
         "small" : ""
@@ -115,8 +115,8 @@ body.vipList = [
       "vipGrow" : "1"
     },
     {
-      "isNew" : "1",
-      "suplusDay" : "0",
+      "isNew" : "5",
+      "suplusDay" : "1",
       "icon" : {
         "general" : "",
         "small" : ""
@@ -125,7 +125,7 @@ body.vipList = [
       "isYear" : "1",
       "payId" : "1",
       "isVip" : "1",
-      "daily" : "-10",
+      "daily" : "99",
       "vipLevel" : "9",
       "register" : "20991201",
       "lastPay" : "20991201",
