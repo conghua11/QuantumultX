@@ -8,6 +8,11 @@
 [mitm]
 hostname = www.123pan.com
 
+[Script]
+# 解锁VIP
+http-response ^https:\/\/www\.123pan\.com\/api\/user\/info\?auth-key=\.*? response-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/123pan.js
+[Mitm]
+hostname = www.123pan.com
 var body = JSON.parse($response.body)
 body.data ={
     "IsShowAdvertisement" : false,
