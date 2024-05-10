@@ -5,7 +5,7 @@
 #!author = 小白
 #!date = 2024-05-10
 [rewrite_local]
-^https:\/\/xluser-ssl\.xunlei\.com\/xluser\.core\.login\/v1\/etuserinfo url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/main/xunlei.js
+https://xluser-ssl.xunlei.com/xluser.core.login/v3/getuserinfo url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/main/xunlei.js
 
 [mitm]
 hostname = xluser-ssl.xunlei.com
