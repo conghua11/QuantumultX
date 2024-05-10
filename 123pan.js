@@ -28,11 +28,11 @@ body.data ={
         "UserVipDetailInfos" : [
 
     ],
-        "SpacePermanent" : 2199023255552,
+        "SpacePermanent" : 1099511627,760,
         "FileCount" : 242,
-        "ContinuousPaymentDate" : "2099-01-01 08:00:00",
+        "ContinuousPaymentDate" : "2299-12-01 08:00:00",
         "IsAuthentication" : true,
-        "SpaceUsed" : 1833175052650,
+        "SpaceUsed" : 183317505265,
         "ContinuousPaymentAmount" : 5,
         "VipLevel" : 5,
         "UID" : 1636340,
