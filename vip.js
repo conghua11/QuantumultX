@@ -8,7 +8,7 @@
 # 圈X
 [rewrite_local]
 # 迅雷
-^https:\/\/xluser-ssl\.xunlei\.com\/xluser\.core\.login\/v1\/etuserinfo url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/main/xunlei.js
+https://xluser-ssl.xunlei.com/xluser.core.login/v3/getuserinfo url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/main/xunlei.js
 
 # 123云盘
 ^https:\/\/www\.123pan\.com\/api\/user\/space_record\?auth-key=\.*? url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/main/123.js
@@ -28,7 +28,7 @@ hostname = xluser-ssl.xunlei.com, www.123pan.com, api.mnckj.com, api.wfdata.club
 # Loon
 [Script]
 # 迅雷
-http-response ^https:\/\/xluser-ssl\.xunlei\.com\/xluser\.core\.login\/v1\/etuserinfo requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/xunlei.js
+http-response https://xluser-ssl.xunlei.com/xluser.core.login/v3/getuserinfo requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/xunlei.js
 
 # 123云盘
 http-response ^https:\/\/www\.123pan\.com\/api\/user\/space_record\?auth-key=\.*? requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/123.js
