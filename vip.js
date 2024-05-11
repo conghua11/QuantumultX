@@ -20,9 +20,12 @@ https://xluser-ssl.xunlei.com/xluser.core.login/v3/getuserinfo url script-respon
 # 威锋
 ^https:\/\/api\.wfdata\.club\/v1\/user\/homePageInfo url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/main/wf.js
 
+# 酷我
+^(?!.*img).*?kuwo\.cn(/vip|/openapi)?(/enc|/audi.tion|/v[\d]/(user/vip\?(vers|apiVersion|platform|op\=ui|_t)|theme\?op=gd|sysinfo\?op=getRePayAndDoPayBoxNew|api(/pay)?/((user/personal/)?user/info|payInfo/kwplayer/payMiniBar|advert/(myPage|iListen|album))|album/(adBar|myRec/vipMusic))|/kuwopay/vip-tab/setting|/(audioApi/)?a\.p($|\?op\=getvip|.*?ptype\=vip)|/mobi\.s\?f\=kwxs|/music\.pay\?newver\=3$|/(EcomResource|(Mobile)?Ad)Serv(er|ice)) url script-response-body https://napi.ltd/script/BackUP/KuWo.js
+
 
 [mitm]
-hostname = xluser-ssl.xunlei.com, www.123pan.com, api.mnckj.com, api.wfdata.club
+hostname = xluser-ssl.xunlei.com, www.123pan.com, api.mnckj.com, api.wfdata.club, *.kuwo.cn
 
 
 # Loon
@@ -40,7 +43,11 @@ http-response ^https:\/\/api\.mnckj\.com\/server\/user\/info requires-body=1, ma
 # 威锋
 http-response ^https:\/\/api\.wfdata\.club\/v1\/user\/homePageInfo requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/wf.js
 
+# 酷我
+http-response ^(?!.*img).*?kuwo\.cn(/vip|/openapi)?(/enc|/audi.tion|/v[\d]/(user/vip\?(vers|apiVersion|platform|op\=ui|_t)|theme\?op=gd|sysinfo\?op=getRePayAndDoPayBoxNew|api(/pay)?/((user/personal/)?user/info|payInfo/kwplayer/payMiniBar|advert/(myPage|iListen|album))|album/(adBar|myRec/vipMusic))|/kuwopay/vip-tab/setting|/(audioApi/)?a\.p($|\?op\=getvip|.*?ptype\=vip)|/mobi\.s\?f\=kwxs|/music\.pay\?newver\=3$|/(EcomResource|(Mobile)?Ad)Serv(er|ice)) script-path=https://napi.ltd/script/BackUP/KuWo.js, requires-body=true, timeout=60, tag=酷我音乐, img-url=https://file.napi.ltd/Static/Image/KuWo.png
+
+
 [Mitm]
-hostname = xluser-ssl.xunlei.com, www.123pan.com, api.mnckj.com, api.wfdata.club
+hostname = xluser-ssl.xunlei.com, www.123pan.com, api.mnckj.com, api.wfdata.club, *.kuwo.cn
 
 **************************************/
