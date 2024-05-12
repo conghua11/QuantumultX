@@ -1,20 +1,32 @@
 /****************************
 
- #!name = 美图秀秀1
+ #!name = 美图秀秀
  #!desc = 解锁本地会员
  #!author = 小白
  #!date = 2024-05-12
 
 [Script]
-http-response ^https:\/\/api\.posters\.meitu\.com\/center\/user_info\.*? requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/mtxx1.js
+
+http-response ^https?:\/\/(api|h5).xiuxiu.meitu.com/(?!(v1/feed/)) requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/githubdulong/Script/master/mtxx.js
 
 [Mitm]
-hostname = api.posters.meitu.com
+hostname = api.xiuxiu.meitu.com, h5.xiuxiu.meitu.com
 
 ****************************/
-console.log('开始运行!!!')
-const body = JSON.parse($response.body)
-body.data.is_vip = true
-body.data.vip_end_time = 4099737600
-console.log('解锁成功!!!')
-$done({body: JSON.stringify(body)});
+
+const data = JSON.parse($response.body);
+if (data && data.data) {
+    data.data.vip_type = 1;
+    data.data.expire_days = -9999999999;
+    data.data.is_expire = 0;
+    data.data.in_valid_time = 4099737600;
+    data.data.is_valid_user = 1;
+    data.data.valid_time = 4099737600;
+    data.data.home_prompt = "粉钻会员 2099年12月01日到期";
+    data.data.home_btn_prompt = "已解锁";
+    console.log('解锁成功!!!')
+} else {
+    console.log("无法获取参数,解锁失败!!!");
+}
+
+$done({ body: JSON.stringify(data) });
