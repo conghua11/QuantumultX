@@ -6,7 +6,7 @@
 
 [Script]
 
-http-response ^https?:\/\/(api|h5).xiuxiu.meitu.com/(?!(v1/feed/)) requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/mtxx2.js
+http-response ^https?:\/\/(api|h5).xiuxiu.meitu.com/(?!(v1/feed/)) requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/mtxx.js
 
 [Mitm]
 hostname = api.xiuxiu.meitu.com, h5.xiuxiu.meitu.com
