@@ -6,7 +6,7 @@
 
 [Script]
 
-http-response ^https?:\/\/(api|h5).xiuxiu.meitu.com/(?!(v1/feed/)) requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/githubdulong/Script/master/mtxx.js
+http-response ^https?:\/\/(api|h5).xiuxiu.meitu.com/(?!(v1/feed/)) requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/mtxx1.js
 
 [Mitm]
 hostname = api.xiuxiu.meitu.com, h5.xiuxiu.meitu.com
@@ -29,3 +29,4 @@ if (data && data.data) {
 }
 
 $done({ body: JSON.stringify(data) });
+
