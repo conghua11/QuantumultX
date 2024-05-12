@@ -20,4 +20,4 @@ if (body.subscription && body.subscription.tier) {
 } else {
     console.log('参数不存在,解锁失败!!!')
 }
-$done({body: JSON.stringify(obj)});
+$done({body: JSON.stringify(body)});
