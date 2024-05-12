@@ -3,32 +3,9 @@
 #!name = VIP合集
 #!desc = 解锁本地VIP，个别去广告
 #!author = 小白
-#!date = 2024-05-11
-
-# 圈X
-[rewrite_local]
-# 迅雷
-https://xluser-ssl.xunlei.com/xluser.core.login/v3/getuserinfo url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/main/xunlei.js
-
-# 123云盘
-^https:\/\/www\.123pan\.com\/api\/user\/space_record\?auth-key=\.*? url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/main/123.js
-^https:\/\/www\.123pan\.com\/api\/user\/info\?auth-key=\.*? url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/main/123pan.js
-
-# 剧有引力
-^https:\/\/api\.mnckj\.com\/server\/user\/info url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/main/jyyl.js
-
-# 威锋
-^https:\/\/api\.wfdata\.club\/v1\/user\/homePageInfo url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/main/wf.js
-
-# 酷我
-^(?!.*img).*?kuwo\.cn(/vip|/openapi)?(/enc|/audi.tion|/v[\d]/(user/vip\?(vers|apiVersion|platform|op\=ui|_t)|theme\?op=gd|sysinfo\?op=getRePayAndDoPayBoxNew|api(/pay)?/((user/personal/)?user/info|payInfo/kwplayer/payMiniBar|advert/(myPage|iListen|album))|album/(adBar|myRec/vipMusic))|/kuwopay/vip-tab/setting|/(audioApi/)?a\.p($|\?op\=getvip|.*?ptype\=vip)|/mobi\.s\?f\=kwxs|/music\.pay\?newver\=3$|/(EcomResource|(Mobile)?Ad)Serv(er|ice)) url script-response-body https://napi.ltd/script/BackUP/KuWo.js
+#!date = 2024-05-12
 
 
-[mitm]
-hostname = xluser-ssl.xunlei.com, www.123pan.com, api.mnckj.com, api.wfdata.club, *.kuwo.cn
-
-
-# Loon
 [Script]
 # 迅雷
 http-response https://xluser-ssl.xunlei.com/xluser.core.login/v3/getuserinfo requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/xunlei.js
