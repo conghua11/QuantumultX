@@ -26,9 +26,6 @@ http-response ^(?!.*img).*?kuwo\.cn(/vip|/openapi)?(/enc|/audi.tion|/v[\d]/(user
 # 美图秀秀
 http-response ^https?:\/\/(api|h5).xiuxiu.meitu.com/(?!(v1/feed/)) requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/mtxx.js
 
-[Mitm]
-hostname = 
-
 
 [Mitm]
 hostname = xluser-ssl.xunlei.com, www.123pan.com, api.mnckj.com, api.wfdata.club, *.kuwo.cn, api.xiuxiu.meitu.com, h5.xiuxiu.meitu.com
