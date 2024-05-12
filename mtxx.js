@@ -7,7 +7,7 @@
 
  [rewrite_local]
 
- ^https?:\/\/(api|h5).xiuxiu.meitu.com/(?!(v1/feed/)) url script-response-body https://raw.githubusercontent.com/githubdulong/Script/master/mtxx.js
+ ^https?:\/\/(api|h5).xiuxiu.meitu.com/(?!(v1/feed/)) url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/main/mtxx.js
 
  [mitm]
  hostname = api.xiuxiu.meitu.com, h5.xiuxiu.meitu.com
