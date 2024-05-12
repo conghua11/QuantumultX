@@ -19,7 +19,7 @@ if (data && data.data) {
     data.data.vip_type = 1;
     data.data.expire_days = -9999999999;
     data.data.is_expire = 0;
-    data.data.in_valid_time = 5576488923;
+    data.data.in_valid_time = 4099737600;
     data.data.is_valid_user = 1;
     data.data.valid_time = 4099737600;
     data.data.home_prompt = "粉钻会员 2099年12月01日到期";
