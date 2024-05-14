@@ -1,9 +1,5 @@
 const $ = Env("KuWo");
 
-const req = $request;
-var url = $request.url;
-
-const kuwo = {};
 const KuWo_Enc = '/vip/enc';
 const KuWo_Vip = RegExp(/(vip\/)?v2\/(api(\/pay)?\/user\/info|user\/vip)/);
 const KuWo_Book = RegExp(/(a\.p|v2\/api\/(user\/personal\/)?user\/info)/);
@@ -17,53 +13,49 @@ const KuWo_HomeAD = '/openapi/v1/album/myRec/vipMusic';
 const Play_URL = '/mobi.s?f=kwxs';
 const KuWo_Down = '/music.pay?newver=3';
 
-/*
-const MUSIC_URL = '/audi.tion';
-
-if (url.indexOf(MUSIC_URL) != -1) {
-	obj = $.toObj($response.body);
-	id = obj.songs[0]['id'];
-	!(async () => {
-		await $.http
-		.get({
-			url: 'http://mobi.kuwo.cn/mobi.s?f=web&source=kwplayer_ar_1.1.9_oppo_118980_320.apk&type=convert_url_with_sign&br=2000kflac&rid=' + id
-		})
-		.then((response) => {
-			NewObj = $.toObj(response.body);
-			MusicUrl = NewObj.data['url'];
-			obj.songs[0]['br'] = NewObj.data['bitrate'];
-			obj.songs[0]['format'] = NewObj.data['format'];
-			obj.songs[0]['url'] = MusicUrl;
-			obj.songs[0]['end'] = obj.songs[0]['duration'];
-			obj.songs[0]['https'] = MusicUrl;
-			obj.songs[0]['car_url'] = MusicUrl;
-			obj.songs[0]['car_url_https'] = MusicUrl;
-			$.done({body: $.toStr(obj)});
-		});
-	})().then(() => $.done());
-}
-*/
-
+const req = $request;
+var url = $request.url;
+var kuwo = $.toObj($.getval("KuWo")) || {};
 
 if (url.indexOf(Play_URL) != -1) {	
 	let _Obj = $.toObj($.getval('KuWo'));
 	let PlayID = _Obj.PlayID;
+	let PlayType = _Obj.PlayType
 	let obj = $.toObj($response.body);
 	let rid = obj.data['rid'];
 
 	!(async () => {
 		if ( rid != PlayID ) {
-			await $.http
-		.	get({
-				url: 'http://mobi.kuwo.cn/mobi.s?f=web&source=kwplayer_ar_1.1.9_oppo_118980_320.apk&type=convert_url_with_sign&br=320kmp3&rid=' + PlayID
-			})
-			.then((response) => {
-				body = response.body;
-			});
+			let br = [
+				{bitrate: "4000kflac", br: 4000},
+				{bitrate: "2000kflac", br: 2000},
+				{bitrate: "320kmp3", br: 320}
+			];
+			var i = 0;
+			if ($.getval('选择试听音质') === '无损音质')
+				var i = 1;
+			if ($.getval('选择试听音质') === '超品音质' || PlayType == "book")
+				var i = 2;
+			while (br[i]) {
+				await $.http
+			.	get({
+					url: 'http://mobi.kuwo.cn/mobi.s?f=web&source=kwplayer_ar_1.1.9_oppo_118980_320.apk&type=convert_url_with_sign&br=' + br[i].bitrate + '&rid=' + PlayID
+				})
+				.then((response) => {
+					obj = $.toObj(response.body);
+				});
+				if ( br[i].br == obj.data['bitrate']) {
+					body = $.toStr(obj);
+					break;
+				}
+				body = $.toStr(obj);
+				i = i + 1;
+			}
 		} else {
 			body = $.toStr(obj);
 		}
-		kuwo["PlayID"] = "";
+		kuwo.PlayID = "";
+		kuwo.PlayType = "";
 		$.setval($.toStr(kuwo), 'KuWo');
 		$.done({body: body});
 	})().then(() => $.done());
@@ -73,7 +65,8 @@ if (url.endsWith(KuWo_Down)) {
 	id = $response.body.replace(/.*?\"id\":(\d+).*/, '$1');
 	obj = $.toObj($response.body);
 	// let id = obj.songs[0].id;
-	kuwo["PlayID"] = id;
+	kuwo.PlayID = id;
+	kuwo.PlayType = "song";
 	$.setval($.toStr(kuwo), 'KuWo');
 	obj.songs[0].audio.forEach((item) => (item.st = 0));
 	let tmp = obj.songs[0].audio[0].policy;
@@ -141,7 +134,8 @@ if (url.match(KuWo_Vip)) {
 
 if (url.match(KuWo_Book)) {
 	id = $response.body.replace(/.*?\"id\":(\d+).*/, '$1');
-	kuwo["PlayID"] = id;
+	kuwo.PlayID = id;
+	kuwo.PlayType = "book";
 	$.setval($.toStr(kuwo), 'KuWo');
 	body = $response.body.replace(/(policy|policytype)\":\d/g, '$1\":0').replace(/(playright|downright|type|bought_vip|limitfree|vipType)\":\d/g, '$1\":1').replace(/(end|endtime|vipExpires|bought_vip_end)\":\d+/g, '$1\":4077187200')
 	$.done({body:body})
