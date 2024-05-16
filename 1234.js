@@ -15,7 +15,7 @@ hostname = www.123pan.com
 console.log('开始运行!!!')
 const req = $request;
 const url = $request.url;
-if (url.indexOf('info') !== -1){
+if (url.indexOf('/user/info') !== -1){
     var body = JSON.parse($response.body)
     body.data ={
         "IsShowAdvertisement" : false,
@@ -51,7 +51,7 @@ if (url.indexOf('info') !== -1){
     }
 body = stringify(body)
 }
-if (url.indexOf('space_record') !== -1){
+if (url.indexOf('/user/space_record') !== -1){
     var body = JSON.parse($response.body)
     body.data = {
         "list" : [
