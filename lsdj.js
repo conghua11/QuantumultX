@@ -1,14 +1,15 @@
 /***********************************
- #!name = 乐刷短剧
- #!desc = 解锁本地VIP
- #!author = 小白
- #!data = 2024-05-16
+#!name = 乐刷短剧
+#!desc = 解锁本地VIP
+#!author = 小白
+#!data = 2024-05-16
 
- [Script]
- http-response https://akdj.lunlunkj.vip/api/v1/user/account/info requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/lsdj.js
- [Mitm]
- hostname = akdj.lunlunkj.vip
- ***********************************/
+[Script]
+http-response https://akdj.lunlunkj.vip/api/v1/user/account/info requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/lsdj.js
+[Mitm]
+hostname = akdj.lunlunkj.vip
+***********************************/
+
 const body  = JSON.parse($response.body)
 if (body.data) {
     console.log('开始运行!!!')
