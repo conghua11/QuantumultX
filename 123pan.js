@@ -3,7 +3,7 @@
 #!name = 123云盘
 #!desc = 解锁本地VIP
 #!author = 小白
-#!date = 2024-05-12
+#!date = 2024-05-16
 
 [Script]
 http-response https://www.123pan.com/api/user/(info|space_record) requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/123pan.js
