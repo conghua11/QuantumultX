@@ -15,8 +15,7 @@ DOMAIN-SUFFIX,kuwo.cn,PROXY
 http-response https://xluser-ssl.xunlei.com/xluser.core.login/v3/getuserinfo requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/xunlei.js, tag=迅雷
 
 # 123云盘
-http-response ^https:\/\/www\.123pan\.com\/api\/user\/space_record\?auth-key=\.*? requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/123.js, tag=123云盘空间
-http-response ^https:\/\/www\.123pan\.com\/api\/user\/info\?auth-key=\.*? requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/123pan.js, tag=123云盘
+http-response https://www.123pan.com/api/user/(info|space_record) requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/123pan.js
 
 # 剧有引力
 http-response ^https:\/\/api\.mnckj\.com\/server\/user\/info requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/jyyl.js, tag=剧有引力
