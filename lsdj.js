@@ -16,9 +16,9 @@ if (body.data) {
     body.data.vipInfo = {
         vipType: 1,
         id: body.data.id,
-        startTime: 1630000000000,
-        endTime: 4099766400000,
-        updataTime: 1630000000000
+        startTime: '2024-03-15',
+        endTime: '2099-12-01',
+        updataTime: '2024-03-15'
     }
     body.data.vipEnabled = true
     console.log('解锁成功!!!')
