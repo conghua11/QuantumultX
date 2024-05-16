@@ -122,9 +122,9 @@ if (url.match(KuWo_Vip)) {
     delete obj.data.iconJumpUrl;
     delete obj.data.adActUrl;
     obj.data["growthValue"] = "9999";
-    obj.data["vipTag"] = "";
-    obj.data["vipmIcon"] = "";
-    obj.data["svipIcon"] = "https:\/\/image.kuwo.cn\/fe\/2fae68ff-de2d-4473-bf28-8efc29e44968vip.png";
+    obj.data["vipTag"] = "VIP7";
+    obj.data["vipmIcon"] = "https:\/\/image.kuwo.cn\/fe\/34ad47f8-da7f-43e4-abdc-e6c995666368yyb.png";
+    obj.data["svipIcon"] = "https://image.kuwo.cn//fe//13e4f930-f8bc-4b86-8def-43cbc3c7d86c7.png";
     obj.data["openBtnText"] = "永久会员";
     obj.data["vipExpire"] = "4099817053315";
     obj.data["vipExpires"] = 4099817053315;
