@@ -49,7 +49,7 @@ if (url.indexOf('/user/info') !== -1){
             "Passport" : 18888888888,
             "OpenLink" : 0
     }
-body = stringify(body)
+    body = JSON.stringify(body)
 }
 if (url.indexOf('/user/space_record') !== -1){
     var body = JSON.parse($response.body)
