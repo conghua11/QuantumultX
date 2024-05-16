@@ -5,7 +5,7 @@
 #!data = 2024-05-16
 
 [Script]
-http-response http:\/\/akdj\.lunlunkj\.vip\/api\/v1\/user\/account\/info requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/lsdj.js
+http-response http://akdj.lunlunkj.vip/api/v1/user/account/info requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/lsdj.js
 [Mitm]
 hostname = akdj.lunlunkj.vip
 ***********************************/
