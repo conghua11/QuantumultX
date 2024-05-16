@@ -3,8 +3,12 @@
 #!name = VIP合集
 #!desc = 解锁本地VIP，个别去广告
 #!author = 小白
-#!date = 2024-05-12
+#!date = 2024-05-16
+#!select = 选择试听音质,至臻音质,无损音质,超品音质
 
+[Rule]
+USER-AGENT,KWPlayer*,PROXY
+DOMAIN-SUFFIX,kuwo.cn,PROXY
 
 [Script]
 # 迅雷
