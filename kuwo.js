@@ -22,6 +22,7 @@ if (url.indexOf(Play_URL1) !== -1) {
     let PlayID = _Obj.PlayID;
     let PlayType = _Obj.PlayType
     let obj = $.toObj($response.body);
+    console.log(obj)
     let rid = obj['rid'];
 
     !(async () => {
