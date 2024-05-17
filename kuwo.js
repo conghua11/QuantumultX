@@ -17,8 +17,54 @@ const KuWo = $.toObj($.getval("KuWo")) || {};
 
 const req = $request;
 const url = req.url;
+if (url.indexOf(Play_URL1) !== -1) {
+    let _Obj = $.toObj($.getval('KuWo'));
+    let PlayID = _Obj.PlayID;
+    let PlayType = _Obj.PlayType
+    let obj = $.toObj($response.body);
+    let rid = obj['rid'];
 
-if (url.indexOf(Play_URL) !== -1 || url.indexOf(Play_URL1) !== -1) {
+    !(async () => {
+        if (rid !== PlayID) {
+            let br = [
+                {bitrate: "4000kflac", br: 4000},
+                {bitrate: "2000kflac", br: 2000},
+                {bitrate: "320kmp3", br: 320}
+            ];
+            let i = 0;
+            if ($.getval('选择试听音质') === '无损音质')
+                {
+                    i = 1;
+                }
+            if ($.getval('选择试听音质') === '超品音质' || PlayType === "book")
+                {
+                    i = 2;
+                }
+            while (br[i]) {
+                await $.http
+                    .get({
+                        url: 'http://mobi.kuwo.cn/mobi.s?f=web&source=kwplayer_ar_1.1.9_oppo_118980_320.apk&type=convert_url_with_sign&br=' + br[i].bitrate + '&rid=' + PlayID
+                    })
+                    .then((response) => {
+                        obj = $.toObj(response.body);
+                    });
+                if (br[i].br === obj.data['bitrate']) {
+                    body = $.toStr(obj);
+                    break;
+                }
+                body = $.toStr(obj);
+                i = i + 1;
+            }
+        } else {
+            body = $.toStr(obj);
+        }
+        KuWo.PlayID = "";
+        KuWo.PlayType = "";
+        $.setval($.toStr(KuWo), 'KuWo');
+        $.done({body: body});
+    })().then(() => $.done());
+}
+if (url.indexOf(Play_URL) !== -1) {
     let _Obj = $.toObj($.getval('KuWo'));
     let PlayID = _Obj.PlayID;
     let PlayType = _Obj.PlayType
