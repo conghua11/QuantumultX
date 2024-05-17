@@ -60,7 +60,6 @@ if (url.indexOf(Play_URL1) !== -1) {
             const text1 = Object.keys(body).map(key => `${key}=${encodeURIComponent(body[key])}`).join('&');
                         });
             $.done({text: text1});
-    })().then(() => $.done());
 }
 if (url.indexOf(Play_URL) !== -1) {
     let _Obj = $.toObj($.getval('KuWo'));
