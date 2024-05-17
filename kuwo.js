@@ -19,16 +19,7 @@ const req = $request;
 const url = req.url;
 if (url.indexOf(Play_URL1) !== -1) {
     const text = $response.body
-    console.log(text)
-    const keyValuePairs = text.split(' ');
-    const jsonFormat = {};
-    keyValuePairs.forEach(pair => {
-    const [key, value] = pair.split('=');
-        jsonFormat[key] = value;
-    });
-    const new_json = JSON.parse(JSON.stringify(jsonFormat));
-    console.log(new_json)
-    const rid = new_json.rid
+    const rid = text.match(/rid=(\d+)/)[1]
     console.log(rid)
     !(async () => {
         let br = [
