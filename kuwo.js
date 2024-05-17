@@ -10,14 +10,15 @@ const Book_Home = '/v2/api/advert/myPage'
 const KuWo_BookAD = '/v2/api/pay/payInfo/kwplayer/payMiniBar';
 const KuWo_TabAD = '/kuwopay/vip-tab/setting';
 const KuWo_HomeAD = '/openapi/v1/album/myRec/vipMusic';
-const Play_URL = '/mobi.s?f=kwxs' or '/mobi.s?f=kuwo';
+const Play_URL = '/mobi.s?f=kwxs';
+const Play_URL1 = '/mobi.s?f=kuwo';
 const KuWo_Down = '/music.pay?newver=3';
 const KuWo = $.toObj($.getval("KuWo")) || {};
 
 const req = $request;
 const url = req.url;
 
-if (url.indexOf(Play_URL) !== -1) {
+if (url.indexOf(Play_URL or Play_URL1) !== -1) {
     let _Obj = $.toObj($.getval('KuWo'));
     let PlayID = _Obj.PlayID;
     let PlayType = _Obj.PlayType
