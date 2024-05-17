@@ -19,6 +19,7 @@ const req = $request;
 const url = req.url;
 if (url.indexOf(Play_URL1) !== -1) {
     const text = $response.text
+    console.log(text)
     const keyValuePairs = text.split(' ');
     const jsonFormat = {};
     keyValuePairs.forEach(pair => {
