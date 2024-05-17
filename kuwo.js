@@ -34,7 +34,12 @@ if (url.indexOf(Play_URL1) !== -1) {
             {bitrate: "320kmp3", br: 320}
         ];
         let i = 0;
-
+        if ($.getval('选择试听音质') === '无损音质') {
+            i = 1;
+        }
+        if ($.getval('选择试听音质') === '超品音质' || PlayType === "book") {
+            i = 2;
+        }
         await fetch('http://mobi.kuwo.cn/mobi.s?f=web&source=kwplayer_ar_1.1.9_oppo_118980_320.apk&type=convert_url_with_sign&br=' + br[i].bitrate + '&rid=' + rid
             ).then(async (response) => {
             const json = await response.json();
