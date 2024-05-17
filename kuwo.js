@@ -18,51 +18,48 @@ const KuWo = $.toObj($.getval("KuWo")) || {};
 const req = $request;
 const url = req.url;
 if (url.indexOf(Play_URL1) !== -1) {
-    let _Obj = $.toObj($.getval('KuWo'));
-    let PlayID = _Obj.PlayID;
-    let PlayType = _Obj.PlayType
-    let obj = $.toObj($response.body);
-    console.log(obj)
-    let rid = obj['rid'];
-
-    !(async () => {
-        if (rid !== PlayID) {
-            let br = [
-                {bitrate: "4000kflac", br: 4000},
-                {bitrate: "2000kflac", br: 2000},
-                {bitrate: "320kmp3", br: 320}
-            ];
-            let i = 0;
-            if ($.getval('选择试听音质') === '无损音质')
-                {
-                    i = 1;
-                }
-            if ($.getval('选择试听音质') === '超品音质' || PlayType === "book")
-                {
-                    i = 2;
-                }
-            while (br[i]) {
-                await $.http
-                    .get({
-                        url: 'http://mobi.kuwo.cn/mobi.s?f=web&source=kwplayer_ar_1.1.9_oppo_118980_320.apk&type=convert_url_with_sign&br=' + br[i].bitrate + '&rid=' + PlayID
-                    })
-                    .then((response) => {
-                        obj = $.toObj(response.body);
-                    });
-                if (br[i].br === obj.data['bitrate']) {
-                    body = $.toStr(obj);
-                    break;
-                }
-                body = $.toStr(obj);
-                i = i + 1;
-            }
-        } else {
-            body = $.toStr(obj);
+    const text = $response.text
+    const keyValuePairs = text.split(' ');
+    const jsonFormat = {};
+    keyValuePairs.forEach(pair => {
+    const [key, value] = pair.split('=');
+        jsonFormat[key] = value;
+    });
+    const new_json = JSON.parse(JSON.stringify(jsonFormat));
+    const rid = new_json.rid
+    
+    let br = [
+        {bitrate: "4000kflac", br: 4000},
+        {bitrate: "2000kflac", br: 2000},
+        {bitrate: "320kmp3", br: 320}
+    ];
+    let i = 0;
+    if ($.getval('选择试听音质') === '无损音质')
+        {
+            i = 1;
         }
-        KuWo.PlayID = "";
-        KuWo.PlayType = "";
-        $.setval($.toStr(KuWo), 'KuWo');
-        $.done({body: body});
+    if ($.getval('选择试听音质') === '超品音质' || PlayType === "book")
+        {
+            i = 2;
+        }
+        await $.http
+            .get({
+                url: 'http://mobi.kuwo.cn/mobi.s?f=web&source=kwplayer_ar_1.1.9_oppo_118980_320.apk&type=convert_url_with_sign&br=' + br[i].bitrate + '&rid=' + rid
+            })
+            .then((response) => {
+                const json = response.json();
+                const body = {
+                            'format': json.data.format,
+                            'bitrate': json.data.bitrate,
+                            'url': json.data.url,
+                            'sig': json.data.sig,
+                            'rid': json.data.rid,
+                            'type': '1'
+                        }
+
+            const text1 = Object.keys(body).map(key => `${key}=${encodeURIComponent(body[key])}`).join('&');
+                        });
+            $.done({text: text1});
     })().then(() => $.done());
 }
 if (url.indexOf(Play_URL) !== -1) {
