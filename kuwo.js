@@ -10,7 +10,7 @@ const Book_Home = '/v2/api/advert/myPage'
 const KuWo_BookAD = '/v2/api/pay/payInfo/kwplayer/payMiniBar';
 const KuWo_TabAD = '/kuwopay/vip-tab/setting';
 const KuWo_HomeAD = '/openapi/v1/album/myRec/vipMusic';
-const Play_URL = '/mobi.s?f=kwxs';
+const Play_URL = '/mobi.s?f=kwxs' or '/mobi.s?f=kuwo';
 const KuWo_Down = '/music.pay?newver=3';
 const KuWo = $.toObj($.getval("KuWo")) || {};
 
