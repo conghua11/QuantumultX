@@ -26,7 +26,9 @@ if (url.indexOf(Play_URL1) !== -1) {
         jsonFormat[key] = value;
     });
     const new_json = JSON.parse(JSON.stringify(jsonFormat));
+    console.log(new_json)
     const rid = new_json.rid
+    console.log(rid)
     !(async () => {
         let br = [
             {bitrate: "4000kflac", br: 4000},
