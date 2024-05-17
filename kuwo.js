@@ -18,7 +18,7 @@ const KuWo = $.toObj($.getval("KuWo")) || {};
 const req = $request;
 const url = req.url;
 
-if (url.indexOf(Play_URL) !== -1) {
+if (url.indexOf(Play_URL) !== -1 || url.indexOf(Play_URL) !== -1) {
     let _Obj = $.toObj($.getval('KuWo'));
     let PlayID = _Obj.PlayID;
     let PlayType = _Obj.PlayType
