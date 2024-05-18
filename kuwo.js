@@ -34,9 +34,9 @@ if (url.indexOf(Play_URL1) !== -1) {
         if ($.getval('选择试听音质') === '超品音质' || PlayType === "book") {
             i = 2;
         }
-        await fetch('http://mobi.kuwo.cn/mobi.s?f=web&source=kwplayer_ar_1.1.9_oppo_118980_320.apk&type=convert_url_with_sign&br=' + br[i].bitrate + '&rid=' + PlayID
-            ).then(async (response) => {
-            const json = await response.json();
+        await $.http.get({url: 'http://mobi.kuwo.cn/mobi.s?f=web&source=kwplayer_ar_1.1.9_oppo_118980_320.apk&type=convert_url_with_sign&br=' + br[i].bitrate + '&rid=' + PlayID
+                    })).then((response) => {
+            const json = $.toObj(response.body);;
             console.log(json)
             const body = {
                 'format': json.data.format,
