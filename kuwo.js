@@ -55,6 +55,7 @@ if (url.indexOf(Play_URL1) !== -1) {
 }
 if (url.indexOf(Play_URL) !== -1) {
     let _Obj = $.toObj($.getval('KuWo'));
+    console.log(_Obj)
     let PlayID = _Obj.PlayID;
     let PlayType = _Obj.PlayType
     let obj = $.toObj($response.body);
