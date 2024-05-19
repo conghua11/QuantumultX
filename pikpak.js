@@ -18,7 +18,7 @@ const req = $request;
 const url = $request.url;
 const URL1 = '/vip/info';
 const URL2 = '/about';
-const URL3 = '/space/list'
+const URL3 = '/space/list';
 const URL4 = '/allSubscriptionStatus';
 if (url.indexOf(URL1) !== -1) {
     const body = JSON.parse($response.body);
