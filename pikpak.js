@@ -27,7 +27,7 @@ if (url.indexOf('/vip/v1/vip/info?') !== -1) {
             "description": "区域会员",
             "status": "ok",
             "expire": "2099-12-01T10:12:29+08:00",
-            "surplus_day": 9999
+            "surplus_day": 510004015
         }
     ]
     console.log('解锁成功')
