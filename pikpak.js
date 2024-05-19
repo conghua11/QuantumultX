@@ -7,7 +7,7 @@
 
 [Script]
 # PIKPAK
-http-response https://api-drive.mypikpak.com/(vip/v1/vip/info? | drive/v1/about?space=) requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/pikpak.js, tag=PIKPAK
+http-response https://api-drive.mypikpak.com/(vip/v1/vip/info?|drive/v1/about?space=) requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/pikpak.js, tag=PIKPAK
 
 [Mitm]
 hostname = api-drive.mypikpak.com
