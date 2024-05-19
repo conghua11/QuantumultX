@@ -65,7 +65,6 @@ if (url.indexOf('/vip/v1/allSubscriptionStatus') !== -1) {
                   "past_due_deadline":"",
                   "pay_type":"",
                   "region":"regional"};
-};
     console.log('解锁成功')
     $done({body: JSON.stringify(body)});
 }
