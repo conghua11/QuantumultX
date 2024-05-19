@@ -47,6 +47,7 @@ if (url.indexOf('/drive/v1/about?') !== -1) {
     $done({body: JSON.stringify(body)});
 }
 if (url.indexOf('/vip/v1/space/list?') !== -1) {
+    const body = JSON.parse($response.body);
     const body.base.assets = '10T'
     const body.base.expire_time = "2099-12-01T21:30:15+08:00"
     const body.size = '10995116277760'
