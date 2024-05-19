@@ -50,7 +50,7 @@ if (url.indexOf('/vip/v1/space/list?') !== -1) {
     const body = JSON.parse($response.body);
     body.base.assets = '10T'
     body.base.expire_time = "2099-12-01T21:30:15+08:00"
-    body.base.size = '10995116277760'
+    body.base.size = 10995116277760
     body.base.vip_status = 'ok'
     console.log('解锁成功')
     $done({body: JSON.stringify(body)});
