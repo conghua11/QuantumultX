@@ -31,14 +31,14 @@ if (url.indexOf(URL1) !== -1) {
             "description": "全球会员",
             "status": "ok",
             "expire": "2099-12-01T21:30:15+08:00",
-            "surplus_day": 510004015
+            "surplus_day": 9999
         ｝,
         {
             "type": "regional",
             "description": "区域会员",
             "status": "ok",
             "expire": "2099-12-01T10:12:29+08:00",
-            "surplus_day": 510004015
+            "surplus_day": 9999
         }
     ]
     console.log('解锁成功')
