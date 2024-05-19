@@ -13,8 +13,11 @@ http-response https://api-drive.mypikpak.com/(vip/v1/vip/info? | drive/v1/about?
 hostname = api-drive.mypikpak.com
 ****************************/
 
-const body = JSON.parse($response.body);
+console.log('开始运行!!!')
+const req = $request;
+const url = $request.url;
 if (url.indexOf('/vip/v1/vip/info?') !== -1) {
+    const body = JSON.parse($response.body);
     body.data.expire = "2099-12-01T10:12:29+08:00"
     body.data.status = "ok"
     body.data.type = "platinum"
@@ -34,9 +37,12 @@ if (url.indexOf('/vip/v1/vip/info?') !== -1) {
             "surplus_day": 9999
         }
     ]
+    console.log('解锁成功')
     $done({body: JSON.stringify(body)});
 }
 if (url.indexOf('/drive/v1/about?space=') !== -1) {
+    const body = JSON.parse($response.body);
     body.quota.limit = '10995116277760'
+    console.log('解锁成功')
     $done({body: JSON.stringify(body)});
 }
