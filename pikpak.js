@@ -40,7 +40,7 @@ if (url.indexOf('/vip/v1/vip/info?') !== -1) {
     console.log('解锁成功')
     $done({body: JSON.stringify(body)});
 }
-if (url.indexOf('/drive/v1/about?space=') !== -1) {
+if (url.indexOf('/drive/v1/about?') !== -1) {
     const body = JSON.parse($response.body);
     body.quota.limit = '10995116277760'
     console.log('解锁成功')
