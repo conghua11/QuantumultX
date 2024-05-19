@@ -39,3 +39,4 @@ if (url.indexOf('/vip/v1/vip/info?') !== -1) {
 if (url.indexOf('/drive/v1/about?space=') !== -1) {
     body.quota.limit = '10995116277760'
     $done({body: JSON.stringify(body)});
+}
