@@ -32,8 +32,11 @@ http-response ^(?!.*img).*?kuwo\.cn(/vip|/openapi)?(/enc|/audi.tion|/v[\d]/(user
 # 美图秀秀
 http-response ^https?:\/\/(api|h5).xiuxiu.meitu.com/(?!(v1/feed/)) requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/mtxx.js, tag=美图秀秀
 
+# PIKPAK
+http-response https://api-drive.mypikpak.com/(vip/v1/vip/info?|drive/v1/about?|vip/v1/space/list?) requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/pikpak.js, tag=PIKPAK
+
 
 [Mitm]
-hostname = xluser-ssl.xunlei.com, www.123pan.com, api.mnckj.com, api.wfdata.club, *.kuwo.cn, api.xiuxiu.meitu.com, h5.xiuxiu.meitu.com, akdj.lunlunkj.vip
+hostname = xluser-ssl.xunlei.com, www.123pan.com, api.mnckj.com, api.wfdata.club, *.kuwo.cn, api.xiuxiu.meitu.com, h5.xiuxiu.meitu.com, akdj.lunlunkj.vip, api-drive.mypikpak.com
 
 **************************************/
