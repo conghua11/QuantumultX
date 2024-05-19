@@ -7,7 +7,7 @@
 
 [Script]
 # PIKPAK
-http-response https://api-drive.mypikpak.com/(vip/v1/vip/info?|drive/v1/about?|vip/v1/space/list?) requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/pikpak.js, tag=PIKPAK
+http-response https://api-drive.mypikpak.com/(vip/v1/vip/info?|drive/v1/about?|vip/v1/space/list?|vip/v1/allSubscriptionStatus) requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/pikpak.js, tag=PIKPAK
 
 [Mitm]
 hostname = api-drive.mypikpak.com
@@ -52,6 +52,21 @@ if (url.indexOf('/vip/v1/space/list?') !== -1) {
     body.base.expire_time = "2099-12-01T21:30:15+08:00"
     body.base.size = 10995116277760
     body.base.vip_status = 'ok'
+    console.log('解锁成功')
+    $done({body: JSON.stringify(body)});
+}
+if (url.indexOf('/vip/v1/allSubscriptionStatus') !== -1) {
+    const body = JSON.parse($response.body);
+    body.apple = {
+    "subscribed" : true,
+    "status" : "trial",
+    "product" : "sub.year",
+    "purchased" : true,
+    "past_due_deadline" : "",
+    "pay_type" : "",
+    "region" : "global",
+    "interval" : "year"
+    },
     console.log('解锁成功')
     $done({body: JSON.stringify(body)});
 }
