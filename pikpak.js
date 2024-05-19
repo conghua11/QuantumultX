@@ -64,7 +64,7 @@ if (url.indexOf('/vip/v1/allSubscriptionStatus') !== -1) {
     "purchased" : true,
     "past_due_deadline" : "",
     "pay_type" : "",
-    "region" : "global",
+    "region" : "regional",
     "interval" : "year"
     },
     console.log('解锁成功')
