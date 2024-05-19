@@ -32,7 +32,7 @@ if (url.indexOf(URL1) !== -1) {
             "status": "ok",
             "expire": "2099-12-01T21:30:15+08:00",
             "surplus_day": 9999
-        ｝,
+        },
         {
             "type": "regional",
             "description": "区域会员",
