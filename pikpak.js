@@ -23,13 +23,6 @@ if (url.indexOf('/vip/v1/vip/info?') !== -1) {
     body.data.type = "platinum"
     body.data.vipItem = [
         {
-            "type": "global",
-            "description": "全球会员",
-            "status": "ok",
-            "expire": "2099-12-01T21:30:15+08:00",
-            "surplus_day": 510004015
-        },
-        {
             "type": "regional",
             "description": "区域会员",
             "status": "ok",
