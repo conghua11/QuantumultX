@@ -12,6 +12,8 @@ http-response http://soti.ixyzh.com/ios/(userinfo|isvip) requires-body=1, max-si
 hostname = soti.ixyzh.com
 ****************************/
 
+const req = $request;
+const url = $request.url;
 const body = JSON.parse($response.body);
 console.log("开始运行")
 if (url.indexOf('/userinfo') !== -1) {
