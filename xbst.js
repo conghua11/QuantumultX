@@ -23,7 +23,7 @@ if (url.indexOf('/userinfo') !== -1) {
     $done({body: JSON.stringify(body)});
 }
 if (url.indexOf('/isvip') !== -1) {
-    body.data.isvip = 'vip'
+    body.data.isvip = '3'
     console.log('小包搜题会员已解锁')
     $done({body: JSON.stringify(body)});
 }
