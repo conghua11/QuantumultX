@@ -17,13 +17,13 @@ const url = $request.url;
 const body = JSON.parse($response.body);
 console.log("开始运行")
 if (url.indexOf('/userinfo') !== -1) {
-    body.data.vipExpire = "2099-12-01T10:12:29+08:00"
+    body.data.vipExpire = 4099737600
     body.data.userName = "小白破解"
     console.log('小包搜题会员已解锁')
     $done({body: JSON.stringify(body)});
 }
 if (url.indexOf('/isvip') !== -1) {
-    body.data.isvip = 'ok'
+    body.data.isvip = 'vip'
     console.log('小包搜题会员已解锁')
     $done({body: JSON.stringify(body)});
 }
