@@ -359,12 +359,6 @@ function Env(name, opts) {
       }
     }
 
-    getScript(url) {
-      return new Promise((resolve) => {
-        this.get({ url }, (err, resp, body) => resolve(body))
-      })
-    }
-
     runScript(script, runOpts) {
       return new Promise((resolve) => {
         let httpapi = this.getdata('@chavy_boxjs_userCfgs.httpapi')
