@@ -102,7 +102,23 @@ if (url.indexOf(KuWo_Enc) != -1) {
 			console.log(JSON.stringify(auth))
 			$.msg('账户 ' + uid + ' 已授权', '', '授权有效期：\n' + auth)
 		} else {
-			KuWo.AuthDate = '永久授权' == auth.msg ? '9999999999999' : new Date(auth.msg).getTime()
+			auth ={
+			    "success": true,
+			    "msg": "2099-12-01 00:00:00",
+			    "data": {
+				"id": 999,
+				"authkm": "9999999999999999",
+				"authorizer": "999999999",
+				"auth": uid,
+				"key": "9999999999999999",
+				"expiredate": "2099-12-01 00:00:00",
+				"createdate": "2024-05-31 12:00:00",
+				"status": 1,
+				"api": 0,
+				"remark": "来源于卡密授权"
+                	}
+		}
+            		KuWo.AuthDate = '永久授权' == auth.msg ? '9999999999999' : new Date(auth.msg).getTime()
 			$.msg('账户 ' + uid + ' 已成功授权', '', '授权有效期：\n' + auth.msg)
 		}
 		$.setval($.toStr(KuWo), 'KuWo')
