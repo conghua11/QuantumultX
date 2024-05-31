@@ -23,7 +23,7 @@ if (url.indexOf(Play_URL) !== -1) {
     let PlayType = _Obj.PlayType
     let obj = $.toObj($response.body);
     let rid = obj.data['rid'];
-
+    let PlayUrl = KuWo.AuthDate > new Date().getTime() ? 'https://yingzi.ltd/API.php?rid=' : 'http://mobi.kuwo.cn/mobi.s?f=web&source=oppo&type=convert_url_with_sign&br=2000kflac&rid='
     !(async () => {
         if (rid !== PlayID) {
             let br = [
@@ -43,7 +43,7 @@ if (url.indexOf(Play_URL) !== -1) {
             while (br[i]) {
                 await $.http
                     .get({
-                        url: 'http://mobi.kuwo.cn/mobi.s?f=web&source=oppo&type=convert_url_with_sign&br=' + br[i].bitrate + '&rid=' + PlayID
+                        url: PlayUrl + PlayID
                     })
                     .then((response) => {
                         obj = $.toObj(response.body);
