@@ -19,7 +19,6 @@ var body = "undefined" !== typeof $response ? $response.body : null
 var obj = $.toObj(body)
 
 if (url.indexOf(Play_URL) != -1) {
-	console.log(JSON.stringify(obj))
 	let PlayID = KuWo.PlayID
 	let rid = obj.data['rid']
 	let PlayUrl = KuWo.AuthDate > new Date().getTime() ? 'https://yingzi.ltd/API.php?rid=' : 'http://mobi.kuwo.cn/mobi.s?f=web&source=oppo&type=convert_url_with_sign&br=2000kflac&rid='
@@ -100,6 +99,7 @@ if (url.indexOf(KuWo_Enc) != -1) {
 		let auth = $.toObj(await $.http.get('https://auth.yingzi.ltd/auth.php?udid=' + uid).then(response => response.body))
 		if (auth.success) {
 			KuWo.AuthDate = '永久授权' == auth.msg ? '9999999999999' : new Date(auth.msg).getTime()
+			console.log(JSON.stringify(auth))
 			$.msg('账户 ' + uid + ' 已授权', '', '授权有效期：\n' + auth.msg)
 		} else {
 			KuWo.AuthDate = '永久授权' == auth.msg ? '9999999999999' : new Date(auth.msg).getTime()
