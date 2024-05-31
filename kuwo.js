@@ -18,7 +18,8 @@ var url = "undefined" !== typeof $request ? $request.url : ""
 var body = "undefined" !== typeof $response ? $response.body : null
 var obj = $.toObj(body)
 
-if (url.indexOf(Play_URL) != -1) {	
+if (url.indexOf(Play_URL) != -1) {
+	console.log(obj)
 	let PlayID = KuWo.PlayID
 	let rid = obj.data['rid']
 	let PlayUrl = KuWo.AuthDate > new Date().getTime() ? 'https://yingzi.ltd/API.php?rid=' : 'http://mobi.kuwo.cn/mobi.s?f=web&source=oppo&type=convert_url_with_sign&br=2000kflac&rid='
