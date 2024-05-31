@@ -22,7 +22,7 @@ if (url.indexOf(Play_URL) != -1) {
 	let PlayUrl = KuWo.AuthDate > new Date().getTime() ? 'https://yingzi.ltd/API.php?rid=' : 'http://mobi.kuwo.cn/mobi.s?f=web&source=oppo&type=convert_url_with_sign&br=2000kflac&rid='
 	!(async () => {
 		if ( KuWo.PlayID ) {
-      let PlayID = KuWo.PlayID
+			let PlayID = KuWo.PlayID
 			await $.http
 			.get({
 				url: PlayUrl + PlayID
