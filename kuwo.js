@@ -100,7 +100,7 @@ if (url.indexOf(KuWo_Enc) != -1) {
 		if (auth.success) {
 			KuWo.AuthDate = '永久授权' == auth.msg ? '9999999999999' : new Date(auth.msg).getTime()
 			console.log(JSON.stringify(auth))
-			$.msg('账户 ' + uid + ' 已授权', '', '授权有效期：\n' + auth.msg)
+			$.msg('账户 ' + uid + ' 已授权', '', '授权有效期：\n' + auth)
 		} else {
 			KuWo.AuthDate = '永久授权' == auth.msg ? '9999999999999' : new Date(auth.msg).getTime()
 			$.msg('账户 ' + uid + ' 已成功授权', '', '授权有效期：\n' + auth.msg)
