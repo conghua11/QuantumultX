@@ -20,11 +20,10 @@ var obj = $.toObj(body)
 
 if (url.indexOf(Play_URL) != -1) {
 	let PlayID = KuWo.PlayID
-	let rid = obj.data['rid']
 	let PlayUrl = KuWo.AuthDate > new Date().getTime() ? 'https://yingzi.ltd/API.php?rid=' : 'http://mobi.kuwo.cn/mobi.s?f=web&source=oppo&type=convert_url_with_sign&br=2000kflac&rid='
 
 	!(async () => {
-		if ( rid != PlayID ) {
+		if ( PlayID ) {
 			await $.http
 			.get({
 				url: PlayUrl + PlayID
