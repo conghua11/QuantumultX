@@ -1,9 +1,11 @@
 /******************************************
- #!name 酷我音乐
- #!@description 解锁会员皮肤、会员音频(至高320K)、听书权限, 配合其他去广告脚本达到最佳效果
- #!@channel https://t.me/yqc_123
- #!@feedback https://t.me/yqc_777
- #!@version 1.0.1
+#!name 酷我音乐
+#!@description 解锁会员皮肤、会员音频(至高320K)、听书权限, 配合其他去广告脚本达到最佳效果
+#!@channel https://t.me/yqc_123
+#!@feedback https://t.me/yqc_777
+#!@version 1.0.1
+#!icon = https://file.napi.ltd/Static/Image/KuWo.png
+#!date = 2024-06-11
 ******************************************
 脚本声明:
 1. 本脚本仅用于学习研究，禁止用于商业用途
