@@ -17,7 +17,7 @@
 
 console.log('开始运行!!!')
 const body = JSON.parse($response.body)
-body.original_application_version = "365"
+body.subscriber.original_application_version = "365"
 body.subscriber.subscriptions = {
     "python3ide_annual": {
         "original_purchase_date": "2099-12-01T00:42:45Z",
