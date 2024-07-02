@@ -1,3 +1,4 @@
+
 /**************************************
  #!name = python3IDE
  #!desc = 解锁永久会员
@@ -17,7 +18,7 @@
 console.log('开始运行!!!')
 const body = JSON.parse($response.body)
 body.original_application_version = "365"
-body.subscriptions = {
+body.subscriber.subscriptions = {
     "python3ide_annual": {
         "original_purchase_date": "2099-12-01T00:42:45Z",
         "expires_date": "2099-12-01T00:42:45Z",
