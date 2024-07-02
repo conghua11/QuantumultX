@@ -27,7 +27,7 @@ const request = $request;
 
 // 添加或修改请求头
 request.headers['x-forwarded-for'] = ip;
-request.hraders['X-Real-IP'] = ip;
+request.headers['X-Real-IP'] = ip;
 if(request.headers['x-forwarded-for']){
     console.log('生成随机IP:', ip)
 }
