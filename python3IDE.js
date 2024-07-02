@@ -35,7 +35,7 @@ body.subscriber.subscriptions = {
         "auto_resume_date": '2099-12-01T00:42:45Z'
     }
 }
-body.entitlements = {
+body.subscriber.entitlements = {
     "pro": {
         "grace_period_expires_date": '2099-12-01T00:42:45Z',
         "purchase_date": "2099-12-01T00:42:45Z",
