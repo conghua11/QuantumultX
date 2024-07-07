@@ -13,8 +13,7 @@ hostname = api.zhugeculture.com
 ****************************/
 
 const body = JSON.parse($response.body)
-body = {
-  "data" : [
+body.data = [
     {
       "product_id" : "com.zhuge.spider.basic",
       "rights" : [
@@ -31,14 +30,14 @@ body = {
           "content" : "多账户之间数据共享"
         }
       ],
-      "days" : 0,
+      "days" : 9999,
       "id" : 2,
-      "date_type" : "0",
+      "date_type" : "vip",
       "title" : "基础版",
       "oldprice" : "28.00",
       "marketprice" : "18.00",
-      "vip_expiration_time" : null,
-      "status" : "0",
+      "vip_expiration_time" : "2099-12-01",
+      "status" : "ok",
       "createtime" : 1695088494
     },
     {
@@ -71,12 +70,10 @@ body = {
       "title" : "专业版",
       "oldprice" : "68.00",
       "marketprice" : "28.00",
-      "vip_expiration_time" : 2099-12-01,
+      "vip_expiration_time" : "2099-12-01",
       "status" : "ok",
       "createtime" : 1695088494
     }
-  ],
-  "code" : 1
-}
+  ]
 console.log('解锁成功!!!')
 $done({body: JSON.stringify(body)})
