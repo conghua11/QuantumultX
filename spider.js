@@ -6,7 +6,7 @@
 #!date = 2024-07-08
 
 [Script]
-http-response https://www.ecigrxy.cn/api/user/info requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/yglwy.js
+http-response https://www.ecigrxy.cn/api/user/info requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/spider.js
 
 [Mitm]
 hostname = www.ecigrxy.cn
