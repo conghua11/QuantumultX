@@ -12,6 +12,7 @@ http-response https://www.ecigrxy.cn/api/user/info requires-body=1, max-size=0, 
 hostname = www.ecigrxy.cn
 ****************************/
 
+
 const body = JSON.parse($response.body)
 body.data.translateVipDate = "2099-12-08 21:32:21"
 body.data.isDown = true
