@@ -3,7 +3,7 @@
 #!name = VIP合集
 #!desc = 解锁本地VIP，个别去广告
 #!author = 小白
-#!date = 2024-05-31
+#!date = 2024-07-17
 
 
 [Rule]
