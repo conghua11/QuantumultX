@@ -3,6 +3,7 @@
 #!desc = (酷我音乐 & 酷我畅听) 全功能破解
 #!author = 小白改( 代码原作者: 影子 )
 #!date = 2024-08-31
+#!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/Kuwo.png
 
 
  [Rule]
