@@ -98,7 +98,8 @@ if (headers[_0xa60dc5(0x1dd, 'Htfj')](_0xa60dc5(0x1c1, 'AJPX')) || headers[_0xa6
     const notify = $[_0xa60dc5(0x1bb, '5Z6)')](_0xa60dc5(0x1c2, 'RwAU'));
     if (!notify || notify != url) {
         $[_0xa60dc5(0x1cb, 't@Xy')](url, _0xa60dc5(0x1db, 'ojZ#'));
-        const senPlayerUrl = _0xa60dc5(0x1c8, 'U]sj') + encodeURIComponent(url),
+        // const senPlayerUrl = _0xa60dc5(0x1c8, 'U]sj') + encodeURIComponent(url),
+        const senPlayerUrl = encodeURIComponent(url),
             mediaUrl = _0xa60dc5(0x1d6, 'L^3i');
         $[_0xa60dc5(0x1cc, 'Cdj8')]('获取链接成功', senPlayerUrl, mediaUrl, {
             'open-url': senPlayerUrl,
