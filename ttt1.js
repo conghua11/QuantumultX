@@ -102,7 +102,7 @@ if (headers[_0xa60dc5(0x1dd, 'Htfj')](_0xa60dc5(0x1c1, 'AJPX')) || headers[_0xa6
             mediaUrl = _0xa60dc5(0x1d6, 'L^3i');
         console.log('open-url',senPlayerUrl)
         console.log('media-url', mediaUrl)
-        $[_0xa60dc5(0x1cc, 'Cdj8')](_0xa60dc5(0x1d2, '9rcZ'), '请安装Aloha浏览器 ', _0xa60dc5(0x1d3, '$1ER'), {
+        $[_0xa60dc5(0x1cc, 'Cdj8')]('获取链接成功', senPlayerUrl, mediaUrl, {
             'open-url': senPlayerUrl,
             'media-url': mediaUrl
         });
