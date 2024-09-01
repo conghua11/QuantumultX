@@ -101,7 +101,7 @@ if (headers[_0xa60dc5(0x1dd, 'Htfj')](_0xa60dc5(0x1c1, 'AJPX')) || headers[_0xa6
         // const senPlayerUrl = _0xa60dc5(0x1c8, 'U]sj') + encodeURIComponent(url),
             const senPlayerUrl = 'sharetoys://123?url=' + encodeURIComponent(url),
             mediaUrl = _0xa60dc5(0x1d6, 'L^3i');
-        $[_0xa60dc5(0x1cc, 'Cdj8')]('获取链接成功', senPlayerUrl, mediaUrl, {
+        $[_0xa60dc5(0x1cc, 'Cdj8')]('获取链接成功', senPlayerUrl, '点击跳转', {
             'open-url': senPlayerUrl,
             'media-url': mediaUrl
         });
