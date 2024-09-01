@@ -1,3 +1,19 @@
+/**************************************
+#!name = TTT
+#!desc = 获取真实地址
+#!author = 小白
+#!date = 2024-08-14
+
+[Script]
+http-request ^https:\/\/[^\/]*\.qxoovv\.cn\/\w+\/[a-z0-9]{32}\/[a-z0-9]{32}\.m3u8(\?.*)?$ script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/ttt1.js
+http-request ^https:\/\/[^\/]*\.shjsvkj\.cn\/\w+\/[a-z0-9]{32}\/[a-z0-9]{32}\.m3u8(\?.*)?$ script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/ttt1.js
+http-request ^https:\/\/[^\/]*\.shoknkj\.cn\/\w+\/[a-z0-9]{32}\/[a-z0-9]{32}\.m3u8(\?.*)?$ script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/ttt1.js
+http-request https:\/\/[^\/]*\..*\.cn\/\w+\/[a-z0-9]{32}\/[a-z0-9]{32}\.m3u8(\?.*)? script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/ttt1.js
+[MITM]
+hostname = *.shjsvkj.cn, *.qxoovv.cn, *.shoknkj.cn, *.shedbgs.cn, *.shnyigs.cn, *.sholfgs.cn, *.shjtqgs.cn, *.shjtpkj.cn, *.hfsudf.cn
+**************************************/
+
+
 var _0xodY = 'jsjiami.com.v7';
 
 function _0x58e7(_0x4c1138, _0x492efc) {
