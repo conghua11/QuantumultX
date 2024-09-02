@@ -19,33 +19,32 @@ hostname = *.kuwo.cn
 
 
 const $ = Env("酷我音乐")
-const KuWo_Vip = RegExp(/(vip\/)?v2\/(api(\/pay)?\/user\/info|user\/vip)/)
 const url = $request.url
 var obj = $.toObj(body)
-if (url.match(KuWo_Vip)) {
-  	$.msg('匹配到网址:' + url)
-	$.msg('原始响应体:' + body)
-	obj.data["vipIcon"] = "https:\/\/image.kuwo.cn\/fe\/13e4f930-f8bc-4b86-8def-43cbc3c7d86c7.png"
-	delete obj.data.iconJumpUrl
-	delete obj.data.adActUrl
-	obj.data["growthValue"] = "9999"
-	obj.data["vipTag"] = "VIP7"
-	obj.data["vipmIcon"] = "https:\/\/image.kuwo.cn\/fe\/34ad47f8-da7f-43e4-abdc-e6c995666368yyb.png"
-	obj.data["svipIcon"] = "https:\/\/image.kuwo.cn\/fe\/13e4f930-f8bc-4b86-8def-43cbc3c7d86c7.png"
-	obj.data["openBtnText"] = "永久会员"
-	obj.data["vipExpire"] = "4099737600315"
-	obj.data["vipExpires"] = 4099737600315
-	obj.data["luxuryIcon"] = "https:\/\/image.kuwo.cn\/fe\/2fae68ff-de2d-4473-bf28-8efc29e44968vip.png"
-	obj.data["vipmExpire"] = "4099737600315"
-	obj.data["vipLuxuryExpire"] = "4099737600315"
-	obj.data["svipExpire"] = "4099737600315"
-	obj.data["isYearUser"] = "2"
-	obj.data["biedSong"] = "1"
-	obj.data["svipAutoPayUser"] = "1"
-	body = $.toStr(obj)
-	$.msg('改后响应体:' + body)
-	$.done({body: body})
-}
+
+$.msg('匹配到网址:' + url)
+$.msg('原始响应体:' + body)
+obj.data["vipIcon"] = "https:\/\/image.kuwo.cn\/fe\/13e4f930-f8bc-4b86-8def-43cbc3c7d86c7.png"
+delete obj.data.iconJumpUrl
+delete obj.data.adActUrl
+obj.data["growthValue"] = "9999"
+obj.data["vipTag"] = "VIP7"
+obj.data["vipmIcon"] = "https:\/\/image.kuwo.cn\/fe\/34ad47f8-da7f-43e4-abdc-e6c995666368yyb.png"
+obj.data["svipIcon"] = "https:\/\/image.kuwo.cn\/fe\/13e4f930-f8bc-4b86-8def-43cbc3c7d86c7.png"
+obj.data["openBtnText"] = "永久会员"
+obj.data["vipExpire"] = "4099737600315"
+obj.data["vipExpires"] = 4099737600315
+obj.data["luxuryIcon"] = "https:\/\/image.kuwo.cn\/fe\/2fae68ff-de2d-4473-bf28-8efc29e44968vip.png"
+obj.data["vipmExpire"] = "4099737600315"
+obj.data["vipLuxuryExpire"] = "4099737600315"
+obj.data["svipExpire"] = "4099737600315"
+obj.data["isYearUser"] = "2"
+obj.data["biedSong"] = "1"
+obj.data["svipAutoPayUser"] = "1"
+body = $.toStr(obj)
+$.msg('改后响应体:' + body)
+$.done({body: body})
+
 
 
 
