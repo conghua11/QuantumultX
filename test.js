@@ -20,44 +20,44 @@ hostname = *.kuwo.cn
 
 const $ = Env("酷我音乐")
 const url = $request.url
-const body = $response.body
-var obj = $.toObj(body)
+const body = JSON.parse($response.body);
 
 $.msg('匹配到网址:' + url)
 $.msg('原始响应体:' + body)
-body = {
-    "data": {
-        "growthValue": "9999",
-        "openBtnText": "永久会员",
-        "vipmExpire": "4099737600315",
-        "vipIcon": "https://img1.kuwo.cn/v2/20220901/tech_common/65fb7f918db5c566a036d4dd7efb5d24.png",
-        "biedAlbum": "0",
-        "userType": "2",
-        "vipLuxuryExpire": "4099737600315",
-        "time": "4099737600315",
-        "cheZaiAutoPayUser": "1",
-        "luxuryIcon": "https://img1.kuwo.cn/v2/20220901/tech_common/65fb7f918db5c566a036d4dd7efb5d24.png",
-        "svipAutoPayUser": "1",
-        "vip3Expire": "4099737600315",
-        "vipmAutoPayUser": "1",
-        "chezaiIcon": "https://img1.kuwo.cn/v2/20220901/tech_common/45c14dae6597a434f7962c3039094371.png",
-        "vipWatch1Expire": "4099737600315",
-        "vipmIcon": "https://img1.kuwo.cn/v2/20220901/tech_common/45c14dae6597a434f7962c3039094371.png",
-        "luxAutoPayUser": "1",
-        "vipExpire": "4099737600315",
-        "lwPrice": "",
-        "vipTag": "VIP7",
-        "vipOverSeasExpire": "4099737600315",
-        "svipIcon": "https://img1.kuwo.cn/v2/20220901/tech_common/45c14dae6597a434f7962c3039094371.png",
-        "iconJumpUrl": "",
-        "chezaiExpire": "4099737600315",
-        "svipExpire": "4099737600315",
-        "biedSong": "1",
-        "isYearUser": "2",
-        "experienceExpire": "4099737600315",
-        "isNewUser": "1"
-    }, "ctime": 4099737600315, "meta": {"desc": "成功", "code": 200}
-}
+
+body.data = {
+    "growthValue": "9999",
+    "openBtnText": "永久会员",
+    "vipmExpire": "4099737600315",
+    "vipIcon": "https://img1.kuwo.cn/v2/20220901/tech_common/65fb7f918db5c566a036d4dd7efb5d24.png",
+    "biedAlbum": "0",
+    "userType": "2",
+    "vipLuxuryExpire": "4099737600315",
+    "time": "4099737600315",
+    "cheZaiAutoPayUser": "1",
+    "luxuryIcon": "https://img1.kuwo.cn/v2/20220901/tech_common/65fb7f918db5c566a036d4dd7efb5d24.png",
+    "svipAutoPayUser": "1",
+    "vip3Expire": "4099737600315",
+    "vipmAutoPayUser": "1",
+    "chezaiIcon": "https://img1.kuwo.cn/v2/20220901/tech_common/45c14dae6597a434f7962c3039094371.png",
+    "vipWatch1Expire": "4099737600315",
+    "vipmIcon": "https://img1.kuwo.cn/v2/20220901/tech_common/45c14dae6597a434f7962c3039094371.png",
+    "luxAutoPayUser": "1",
+    "vipExpire": "4099737600315",
+    "lwPrice": "",
+    "vipTag": "VIP7",
+    "vipOverSeasExpire": "4099737600315",
+    "svipIcon": "https://img1.kuwo.cn/v2/20220901/tech_common/45c14dae6597a434f7962c3039094371.png",
+    "iconJumpUrl": "",
+    "chezaiExpire": "4099737600315",
+    "svipExpire": "4099737600315",
+    "biedSong": "1",
+    "isYearUser": "2",
+    "experienceExpire": "4099737600315",
+    "isNewUser": "1"
+}, 
+body.ctime = 4099737600315
+
 $.msg('改后响应体:' + body)
 $.done({body: body})
 
