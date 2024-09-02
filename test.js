@@ -11,7 +11,7 @@ DOMAIN-SUFFIX,kuwo.cn,PROXY
 
 [Script]
  # 酷我
-http-response https://vip1.kuwo.cn/vip/v2/user/vip?platform=\.*? script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/test.js, requires-body=true, timeout=60, tag=酷我音乐, img-url=https://file.napi.ltd/Static/Image/KuWo.png
+http-response https://vip1\.kuwo\.cn/vip/v2/user/vip\?platform=.*? script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/test.js, requires-body=true, timeout=60, tag=酷我音乐, img-url=https://file.napi.ltd/Static/Image/KuWo.png
 
 [Mitm]
 hostname = *.kuwo.cn
