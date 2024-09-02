@@ -20,6 +20,7 @@ hostname = *.kuwo.cn
 
 const $ = Env("酷我音乐")
 const url = $request.url
+const body = $response.body
 var obj = $.toObj(body)
 
 $.msg('匹配到网址:' + url)
