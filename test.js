@@ -11,7 +11,7 @@ DOMAIN-SUFFIX,kuwo.cn,PROXY
 
 [Script]
  # 酷我
-http-response ^(?!.*img).*?kuwo\.cn(/vip|/openapi)?(/enc|/audi.tion|/v[\d]/(user/vip\?(vers|apiVersion|platform|op\=ui|_t)|theme\?op=gd|sysinfo\?op=getRePayAndDoPayBoxNew|api(/pay)?/((user/personal/)?user/info|payInfo/kwplayer/payMiniBar|advert/(myPage|iListen|album))|album/(adBar|myRec/vipMusic))|/kuwopay/vip-tab/setting|/(audioApi/)?a\.p($|\?op\=getvip|.*?ptype\=vip)|/mobi\.s\?f\=kwxs|/music\.pay\?newver\=3$|/(EcomResource|(Mobile)?Ad)Serv(er|ice)) script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/test.js, requires-body=true, timeout=60, tag=酷我音乐, img-url=https://file.napi.ltd/Static/Image/KuWo.png
+http-response https://vip1.kuwo.cn/vip/v2/user/vip?platform=\.*? script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/test.js, requires-body=true, timeout=60, tag=酷我音乐, img-url=https://file.napi.ltd/Static/Image/KuWo.png
 
 [Mitm]
 hostname = *.kuwo.cn
@@ -21,9 +21,10 @@ hostname = *.kuwo.cn
 const $ = Env("酷我音乐")
 const KuWo_Vip = RegExp(/(vip\/)?v2\/(api(\/pay)?\/user\/info|user\/vip)/)
 const url = $request.url
+var obj = $.toObj(body)
 if (url.match(KuWo_Vip)) {
-  $.msg('匹配到网址:' + url)
-  
+  	$.msg('匹配到网址:' + url)
+	$.msg('原始响应体:' + body)
 	obj.data["vipIcon"] = "https:\/\/image.kuwo.cn\/fe\/13e4f930-f8bc-4b86-8def-43cbc3c7d86c7.png"
 	delete obj.data.iconJumpUrl
 	delete obj.data.adActUrl
@@ -42,6 +43,7 @@ if (url.match(KuWo_Vip)) {
 	obj.data["biedSong"] = "1"
 	obj.data["svipAutoPayUser"] = "1"
 	body = $.toStr(obj)
+	$.msg('改后响应体:' + body)
 	$.done({body: body})
 }
 
