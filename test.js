@@ -23,7 +23,7 @@ const url = $request.url
 const body = JSON.parse($response.body);
 
 $.msg('匹配到网址:' + url)
-$.msg('原始响应体:' + body)
+$.msg('原始响应体:' + body.toString())
 
 body.data = {
     "growthValue": "9999",
@@ -58,7 +58,7 @@ body.data = {
 }, 
 body.ctime = 4099737600315
 
-$.msg('改后响应体:' + body)
+$.msg('改后响应体:' + body.toString())
 $.done({body: body})
 
 
