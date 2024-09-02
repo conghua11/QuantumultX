@@ -1,8 +1,9 @@
 /**************************************
-#!name = 网址匹配
-#!desc = 测试
-#!author = 小白
-#!date = 2024-08-30
+#!name = 酷我音乐 & 酷我畅听
+#!desc = (酷我音乐 & 酷我畅听) 全功能破解
+#!author = 小白改( 代码原作者: 影子 )
+#!date = 2024-09-02
+#!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/Kuwo.png
 
 
  [Rule]
@@ -11,7 +12,7 @@ DOMAIN-SUFFIX,kuwo.cn,PROXY
 
 [Script]
  # 酷我
-http-response https://vip1\.kuwo\.cn/vip/v2/user/vip\?platform=.*? script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/test.js, requires-body=true, timeout=60, tag=酷我音乐, img-url=https://file.napi.ltd/Static/Image/KuWo.png
+http-response ^(?!.*img).*?kuwo\.cn(/vip|/openapi)?(/enc|/audi.tion|/v[\d]/(user/vip\?(vers|apiVersion|platform|op\=ui|_t)|theme\?op=gd|sysinfo\?op=getRePayAndDoPayBoxNew|api(/pay)?/((user/personal/)?user/info|payInfo/kwplayer/payMiniBar|advert/(myPage|iListen|album))|album/(adBar|myRec/vipMusic))|/kuwopay/vip-tab/setting|/(audioApi/)?a\.p($|\?op\=getvip|.*?ptype\=vip)|/mobi\.s\?f\=kwxs|/music\.pay\?newver\=3$|/(EcomResource|(Mobile)?Ad)Serv(er|ice)) script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/kw.js, requires-body=true, timeout=60, tag=酷我音乐, img-url=https://file.napi.ltd/Static/Image/KuWo.png
 
 [Mitm]
 hostname = *.kuwo.cn
@@ -19,50 +20,176 @@ hostname = *.kuwo.cn
 
 
 const $ = Env("酷我音乐")
-const url = $request.url
-const body = JSON.parse($response.body);
 
-$.msg('匹配到网址:' + url)
-$.msg('原始响应体:' + body.toString())
+const Play_URL = '/mobi.s?f=kwxs'
+const KuWo_Down = '/music.pay?newver=3'
+const KuWo_Book = RegExp(/(a\.p|v2\/api\/(user\/personal\/)?user\/info)/)
+const KuWo_Enc = '/vip/enc'
+const KuWo_Vip = RegExp(/(vip\/)?v2\/(api(\/pay)?\/user\/info|user\/vip)/)
+const KuWo_Theme = '/vip/v2/theme?op=gd'
+const Book_Home = '/v2/api/advert/myPage'
+const KuWo_AD = RegExp(/(v2\/api\/advert\/(iListen|album)|openapi\/v1\/album\/adBar|(\/EcomResource|\/(Mobile)?Ad)Serv(er|ice))/)
+const KuWo_ListAD = '/vip/v2/sysinfo?op=getRePayAndDoPayBoxNew'
+const KuWo_BookAD = '/v2/api/pay/payInfo/kwplayer/payMiniBar'
+const KuWo_TabAD = '/kuwopay/vip-tab/setting'
+const KuWo_HomeAD = '/openapi/v1/album/myRec/vipMusic'
+const KuWo = $.toObj($.getval("KuWo")) || {}
 
-body.data = {
-    "growthValue": "9999",
-    "openBtnText": "永久会员",
-    "vipmExpire": "4099737600315",
-    "vipIcon": "https://img1.kuwo.cn/v2/20220901/tech_common/65fb7f918db5c566a036d4dd7efb5d24.png",
-    "biedAlbum": "0",
-    "userType": "2",
-    "vipLuxuryExpire": "4099737600315",
-    "time": "4099737600315",
-    "cheZaiAutoPayUser": "1",
-    "luxuryIcon": "https://img1.kuwo.cn/v2/20220901/tech_common/65fb7f918db5c566a036d4dd7efb5d24.png",
-    "svipAutoPayUser": "1",
-    "vip3Expire": "4099737600315",
-    "vipmAutoPayUser": "1",
-    "chezaiIcon": "https://img1.kuwo.cn/v2/20220901/tech_common/45c14dae6597a434f7962c3039094371.png",
-    "vipWatch1Expire": "4099737600315",
-    "vipmIcon": "https://img1.kuwo.cn/v2/20220901/tech_common/45c14dae6597a434f7962c3039094371.png",
-    "luxAutoPayUser": "1",
-    "vipExpire": "4099737600315",
-    "lwPrice": "",
-    "vipTag": "VIP7",
-    "vipOverSeasExpire": "4099737600315",
-    "svipIcon": "https://img1.kuwo.cn/v2/20220901/tech_common/45c14dae6597a434f7962c3039094371.png",
-    "iconJumpUrl": "",
-    "chezaiExpire": "4099737600315",
-    "svipExpire": "4099737600315",
-    "biedSong": "1",
-    "isYearUser": "2",
-    "experienceExpire": "4099737600315",
-    "isNewUser": "1"
-}, 
-body.ctime = 4099737600315
+var url = "undefined" !== typeof $request ? $request.url : ""
+var body = "undefined" !== typeof $response ? $response.body : null
+var obj = $.toObj(body)
 
-$.msg('改后响应体:' + body.toString())
-$.done({body: body})
+if (url.indexOf(Play_URL) !== -1) {
+	let PlayUrl = 'http://mobi.kuwo.cn/mobi.s?f=web&source=oppo&type=convert_url_with_sign&br=2000kflac&rid='
+	!(async () => {
+		if ( KuWo.PlayID ) {
+			let PlayID = KuWo.PlayID
+			await $.http.get({url: PlayUrl + PlayID}).then((response) => {body = response.body})
+		}else{
+			$.msg('获取歌曲ID错误,歌曲解锁失败!!!')
+		}
+		KuWo.PlayID = ""
+		$.setval($.toStr(KuWo), 'KuWo')
+		$.done({body: body})
+	})()
+}
 
+if (url.endsWith(KuWo_Down)) {
+	if ("number" == typeof obj.songs[0].id) {
+		id = obj.songs[0].id
+		KuWo.PlayID = id
+		$.setval($.toStr(KuWo), 'KuWo')
+	}
+	obj.songs[0].audio.forEach((item) => (item.st = 0))
+	let tmp = obj.songs[0].audio[0].policy
+	obj.user[0] = {
+		pid: obj.songs[0].audio[0].pid,
+		type: tmp,
+		name: tmp + "_1",
+		categray: tmp + "_1",
+		id: obj.songs[0].id,
+		order: 375787919,
+		final: [],
+		buy: 1657425321,
+		begin: 1657425321,
+		end: 4099737600,
+		CurEnd: 0,
+		playCnt: 0,
+		playUpper: 300,
+		downCnt: 0,
+		downUpper: 300,
+		playVideoCnt: 0,
+		playVideoUpper: 3000,
+		downVideoCnt: 0,
+		downVideoUpper: 3000,
+		price: obj.songs[0].audio[0].price,
+		period: 1000,
+		feetype: 0,
+		info: obj.songs[0]
+	}
+	body = $.toStr(obj)
+	$.done({body: body})
+}
 
+if (url.match(KuWo_Book)) {
+	// id = body.replace(/.*?\"id\":(\d+).*/, '$1')
+	if (obj.hasOwnProperty("songs")) {
+		for (let key in obj.songs) {
+			id = obj.songs[key]["id"]
+			if ("number" == typeof id) {
+				KuWo.PlayID = id
+				$.setval($.toStr(KuWo), 'KuWo')
+				break;
+			}
+		}
+	}
+	body = body.replace(/(policy|policytype)":\d/g, '$1\":0').replace(/(playright|downright|type|bought_vip|limitfree|vipType)":\d/g, '$1\":1').replace(/(end|endtime|vipExpires)":\d+/g, '$1\":4077187200')
+	$.done({body: body})
+}
 
+if (url.indexOf(KuWo_Enc) !== -1) {
+    !(async () => {
+        let auth = {'msg': "2099-12-01 00:00:00"}
+        KuWo.AuthDate = '永久授权' === auth.msg ? '9999999999999' : new Date(auth.msg).getTime()
+		$.setval($.toStr(KuWo), 'KuWo')
+		let body = await $.http.get(url.replace(/uid=\d+/g, 'uid=238581279')).then(response => response.body)
+		$.done({body: body})
+	})()
+}
+
+if (url.match(KuWo_Vip)) {
+	obj.data["vipIcon"] = "https:\/\/image.kuwo.cn\/fe\/13e4f930-f8bc-4b86-8def-43cbc3c7d86c7.png"
+	delete obj.data.iconJumpUrl
+	delete obj.data.adActUrl
+	obj.data["growthValue"] = "9999"
+	obj.data["vipTag"] = "VIP7"
+	obj.data["vipmIcon"] = "https:\/\/image.kuwo.cn\/fe\/34ad47f8-da7f-43e4-abdc-e6c995666368yyb.png"
+	obj.data["svipIcon"] = "https:\/\/image.kuwo.cn\/fe\/13e4f930-f8bc-4b86-8def-43cbc3c7d86c7.png"
+	obj.data["openBtnText"] = "永久会员"
+	obj.data["vipExpire"] = "4099737600315"
+	obj.data["vipExpires"] = 4099737600315
+	obj.data["luxuryIcon"] = "https:\/\/image.kuwo.cn\/fe\/2fae68ff-de2d-4473-bf28-8efc29e44968vip.png"
+	obj.data["vipmExpire"] = "4099737600315"
+	obj.data["vipLuxuryExpire"] = "4099737600315"
+	obj.data["svipExpire"] = "4099737600315"
+	obj.data["isYearUser"] = "2"
+	obj.data["biedSong"] = "1"
+	obj.data["svipAutoPayUser"] = "1"
+	body = $.toStr(obj)
+	$.done({body: body})
+}
+
+if (url.indexOf(KuWo_Theme) !== -1) {
+	obj.data.vipTheme.type = "free"
+	delete obj.data.needBieds
+	body = $.toStr(obj)
+	$.done({body: body})
+}
+
+if (url.indexOf(Book_Home) !== -1) {
+	obj.data["scheme"] = null
+	obj.data["title"] = "酷我畅听"
+	obj.data["url"] = null
+	obj.data["subTitle"] = "畅听服务由影子提供"
+	body = $.toStr(obj)
+	$.done({body: body})
+}
+
+if(url.match(KuWo_AD)){
+	body = 'YingZi'
+	$.done({body: body})
+}
+
+if (url.indexOf(KuWo_ListAD) !== -1) {
+	delete obj.data.songListTopContext
+	body = $.toStr(obj)
+	$.done({body: body})
+}
+
+if (url.indexOf(KuWo_BookAD) !== -1) {
+	delete obj.data
+	delete obj.dataV2
+	body = $.toStr(obj)
+	$.done({body: body})
+}
+
+if (url.indexOf(KuWo_TabAD) !== -1) {
+	if ("undefined" !== typeof obj.data['tab']['vipTypes'][0]) {
+		let i = 1;
+		while (obj.data['tab']['vipTypes'][0]['topics'][i]) {
+			delete obj.data['tab']['vipTypes'][0]['topics'][i];
+			i += 1
+		}
+	}
+	body = $.toStr(obj)
+	$.done({body: body})
+}
+
+if (url.indexOf(KuWo_HomeAD) !== -1) {
+	delete obj.data["listenSomething"]
+	body = $.toStr(obj)
+	$.done({body: body})
+}
 
 
 function Env(name, opts) {
