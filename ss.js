@@ -20,6 +20,7 @@ const $ = Env("绅士")
 
 var body = $response.body
 const obj = $.toObj(body)
+obj.my_detail.nick_name = '小白破解'
 obj.my_detail.is_vip = '1'
 obj.my_detail.is_jiahao = '1'
 obj.my_detail.vip_time = '永久VIP'
