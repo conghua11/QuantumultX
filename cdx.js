@@ -7,7 +7,7 @@
 
 [Script]
 # 拦截匹配到的网址  重定向到新网址
-http-request ^https:\/\/[^\/]*\..*\.cn\/\w+\/[a-z0-9]{32}\/[a-z0-9]{32}\.m3u8(\?.*)? script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/cdx.js requires-body=0, timeout=60, tag=重定向
+http-request ^https:\/\/[^\/]*\..*\.cn\/\w+\/[a-z0-9]{32}\/[a-z0-9]{32}\.m3u8(\?.*)? script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/cdx.js timeout=60, tag=重定向
 
 
 [MITM]
@@ -19,22 +19,10 @@ hostname = *.cn
 
 
 const $ = new Env('GOGOGOGO');
-let url = $request.url, headers = $request.headers;
+let url = $request.url
 
 // 替换URL中的域名前缀部分
 url = url.replace(/\/\/(?!long)[^.]+\./, '//long.').replace(/\.m3u8/, '.m3u8');
-
-if (headers.hasOwnProperty('x-playback-session-id') || headers.hasOwnProperty('X-Playback-Session-Id')) {
-    try {
-        const notify = $.getdata('m3u8');
-        if (!notify || notify !== url) {
-            $.setdata(url, 'm3u8');
-            $.log('重定向网址:', url);
-        }
-    } catch (e) {
-        $.log('An error occurred:', e);
-    }
-}
 
 // 完成请求并重定向到新的URL
 $.done({url: url});
