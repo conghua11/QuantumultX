@@ -23,7 +23,7 @@ let url = $request.url
 
 // 替换URL中的域名前缀部分
 url = url.replace(/\/\/(?!long)[^.]+\./, '//long.').replace(/\.m3u8/, '.m3u8');
-
+$.log('替换后的网址:', url)
 // 完成请求并重定向到新的URL
 $.done({url: url});
 
