@@ -29,7 +29,7 @@ if (headers.hasOwnProperty('x-playback-session-id') || headers.hasOwnProperty('X
         const notify = $.getdata('m3u8');
         if (!notify || notify !== url) {
             $.setdata(url, 'm3u8');
-            $.log('正在处理URL:', url);
+            $.log('重定向网址:', url);
         }
     } catch (e) {
         $.log('An error occurred:', e);
