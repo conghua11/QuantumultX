@@ -6,7 +6,7 @@
 
 
 [Script]
-# URL 重写规则：将匹配的 URL 重定向到新模式
+# 拦截匹配到的网址  重定向到新网址
 http-request ^https:\/\/[^\/]*\.(.*\.cn)(\/\w+\/[a-z0-9]{32}\/[a-z0-9]{32}\.m3u8)(\?.*)?$ script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/cdx.js requires-body=true, timeout=60, tag=重定向
 
 
