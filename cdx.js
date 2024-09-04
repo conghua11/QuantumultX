@@ -7,7 +7,7 @@
 
 [Script]
 # 拦截匹配到的网址  重定向到新网址
-http-request ^https:\/\/[^\/]*\..*\.cn\/\w+\/[a-z0-9]{32}\/[a-z0-9]{32}\.m3u8(\?.*)? script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/cdx.js timeout=60, tag=重定向
+^https:\/\/[^\/]*\..*\.cn\/\w+\/[a-z0-9]{32}\/[a-z0-9]{32}\.m3u8(\?.*)? url script-request-header https://raw.githubusercontent.com/conghua11/QuantumultX/main/cdx.js 
 
 
 [MITM]
