@@ -11,7 +11,7 @@ xip = input, tag = 随机IP, desc = 在此处输入IP
 
 [Script]
 # PIKPAK网盘随机设备码和随机IP
-http-request ^https?:\/\/.*\.mypikpak\.com\/.* script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/pkhd.js, argument = [{xid}, {xip}], tag = PIKPAK随机
+http-request ^https?:\/\/.*\.mypikpak\.com\/.* script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/pkhd.js, tag = PIKPAK随机,argument=[{xid}, {xip}]
 [Mitm]
 hostname = *.mypikpak.com
 
