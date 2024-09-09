@@ -1,16 +1,16 @@
 /**************************************
 
 #!name = PIKPAK随机码
-#!desc = 随机设备码和随机IP
+#!desc = 随意设备码和随机IP
 #!author = 小白
 #!date = 2024-09-09
 [Argument]
-xid = input, tag=随机设备码, desc=在此处输入设备码
-xip = input, tag=随机IP, desc=在此处输入IP
+xid = input, tag=设备码, desc=在此处输入设备码
+xip = input, tag=IP, desc=在此处输入IP
 
 
 [Script]
-# PIKPAK网盘随机设备码和随机IP
+# PIKPAK网盘随意设备码和IP
 http-request ^https?:\/\/.*\.mypikpak\.com\/.* script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/pkhd.js, tag = PIKPAK随机,argument=[{xid}, {xip}]
 [Mitm]
 hostname = *.mypikpak.com
