@@ -18,8 +18,8 @@ hostname = *.mypikpak.com
 **************************************/
 
 const $ = new Env('PIKPAK')
-const deviceId = $aegument.xid
-const DIp = $aegument.xip
+const deviceId = $argument.xid
+const DIp = $argument.xip
 const Headers = $request.headers
 Headers['x-device-id'] = deviceId
 Headers['x-forwarded-for'] = DIp
