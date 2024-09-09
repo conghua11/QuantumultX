@@ -5,8 +5,8 @@
 #!author = 小白
 #!date = 2024-09-09
 [Argument]
-deviceId = input, tag = 随机设备码， desc = 在此处填入设备码
-Ip = input, tag = 随机IP， desc = 在此处填入IP
+deviceId = input, tag = 随机设备码
+Ip = input, tag = 随机IP
 
 
 [Script]
