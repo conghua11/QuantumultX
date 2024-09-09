@@ -5,13 +5,13 @@
 #!author = 小白
 #!date = 2024-09-09
 [Argument]
-deviceId = input, tag = 随机设备码, desc = 在此处输入设备码
-Ip = input, tag = 随机IP, desc = 在此处输入IP
+xid = input, tag = 随机设备码, desc = 在此处输入设备码
+xip = input, tag = 随机IP, desc = 在此处输入IP
 
 
 [Script]
 # PIKPAK网盘随机设备码和随机IP
-http-request ^https?:\/\/.*\.mypikpak\.com\/.* script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/pkhd.js, argument = [{deviceId}, {Ip}]
+http-request ^https?:\/\/.*\.mypikpak\.com\/.* script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/pkhd.js, argument = [{xid}, {xip}]
 
 [Mitm]
 hostname = *.mypikpak.com
@@ -19,8 +19,8 @@ hostname = *.mypikpak.com
 **************************************/
 
 const $ = new Env('PIKPAK')
-const Ip = $argument.Ip
-const deviceId = $argument.deviceId
+const Ip = $argument.xip
+const deviceId = $argument.xid
 const Headers = $request.headers
 Headers['x-device-id'] = deviceId
 Headers['x-forwarded-for'] = Ip
