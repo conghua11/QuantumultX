@@ -5,8 +5,8 @@
 #!author = 小白
 #!date = 2024-09-09
 [Argument]
-xid = input, "", tag = 随机设备码, desc = 在此处输入设备码
-xip = input, "", tag = 随机IP, desc = 在此处输入IP
+xid = input, tag = 随机设备码, desc = 在此处输入设备码
+xip = input, tag = 随机IP, desc = 在此处输入IP
 
 
 [Script]
