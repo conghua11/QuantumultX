@@ -23,7 +23,7 @@ const $ = new Env('PIKPAK')
 const Headers = $request.headers
 Headers['x-device-id'] = DId
 Headers['x-forwarded-for'] = DIp
-Headers['x-guid'] = DId
+Headers['x-guid'= DId
 $.log("设备码:",DId)
 $.log("IP:",DIp)
 $.done({ headers : Headers})
