@@ -18,7 +18,7 @@ hostname = wapi1.haijbpi1.com
 
 
 const $ = new Env('测试')
-(async funciton main(){
+(async function main(){
       const body = JSON.parse($response.body)
       $.log(body.data)
       const dedata = await decryptAES_CBC(body.data)
