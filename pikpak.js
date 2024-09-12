@@ -20,6 +20,7 @@ const URL1 = '/vip/info';
 const URL2 = '/about';
 const URL3 = '/space/list';
 const URL4 = '/allSubscriptionStatus';
+const URL5 = '/inviteInfo'
 if (url.indexOf(URL1) !== -1) {
     const body = JSON.parse($response.body);
     body.data.expire = "2099-12-01T10:12:29+08:00"
@@ -72,3 +73,15 @@ if (url.indexOf(URL4) !== -1) {
     console.log('解锁成功')
     $done({body: JSON.stringify(body)});
 }
+if (url.indexOf(URL5) !== -1)｛
+    const body = JSON.parse($response.body);
+    body = {
+  "invited_nums": 999,
+  "invited_days": 9999,
+  "add_days": 9999,
+  "join_vip_days": 9999,
+  "invited_join_days": 9999,
+  "join_vip_nums": 999
+}
+$done({body: JSON.stringify(body)});
+｝
