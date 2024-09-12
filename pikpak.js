@@ -73,7 +73,7 @@ if (url.indexOf(URL4) !== -1) {
     console.log('解锁成功')
     $done({body: JSON.stringify(body)});
 }
-if (url.indexOf(URL5) !== -1)｛
+if (url.indexOf(URL5) !== -1){
     const body = JSON.parse($response.body);
     body = {
   "invited_nums": 999,
@@ -84,4 +84,4 @@ if (url.indexOf(URL5) !== -1)｛
   "join_vip_nums": 999
 }
 $done({body: JSON.stringify(body)});
-｝
+}
