@@ -18,12 +18,18 @@ hostname = wapi1.haijbpi1.com
 
 
 const $ = new Env('测试')
-const res = $response.body
-$.log('捕获数据:', res)
-const body = JSON.parse(res);
-      body.data = 'IPG0VSU6DsxkZT5BvffOHQFFaBDewzOCLO3qHJM3z5jbeaZ/SYeEbzhs+IVFbjOPck5EptR8MZS8kKR3KCuhLGdeW8BcyWlykt4lJG0pROLRrJgIxDAjFBwFp5k4CsuzXLUDI6cRDyI7KdFi7d2FfgyYtMN8gnNnuLVKqWGeU7yvSnYK9Em3mogLT3LVQwlNcSF2WsiFNp12r/cDjIu3BMuQ/N8edbGT563sY8UU7kkQhU7yB16Cn+b7SCRMJ/+ZKTwvGQY0G8FuV2GNNUq4iBXcp7mafZREPwkrd5FiTuIH/8/pel+Z+gMSPqdOHhUtTW67uJB5kP/VZZ0VNspUokgkWpeJbzM8KlJGCGqQdVnfSBELy5E1+fI3pUTT1+9G1meBa3Q2RbLBne6nyxcBtBdw5/vTRReopjAj09o7KrXTcYd4Xh0UFrF0RGb9tNlbz3DXm+vWDA8o8EAaAlSyhmjvNktkgu2p/t0n6dooJSzm+CrQjNxD8y+TluWkp0ABQPgz4s1OVl7gPMss8WuHIm6zeWgS8cb98BxYKvbEYe9/CxWIuU5MZsufzw0qF0lQSTYWtWff7p99Pwmz4Q2ohiADM8iCRw5ZgRZcIjwgDZG5ukPp3htmRAEfN2J5x7yY0XAHSPVODPf7TFX8oycA2lM+X10OOKmBifnoIsCazHLj6ZXaICVj50rAoHjWAq7uXRI6dmuBWN6JVRaW/6GC0WpXh/Xh/oIlDakMJ5oGkOZ9TcoIVxm76AaSbNr0OsocN0AltDdw2GzMTiytVS+4TNNdZ28a3a4lnoVDnmuhCQFLNhAohIPQUqkN7c6nGN/H6EJ14ocFKWr7vXQ12/xcyoxGan2Dj5G9dxSsubyiybTsL6cNC9OK1nsQy3EGSyx1lnPU+f7vk+7oTGse9i0PpRn6vf8uQePyEKiGtbF1Xq8bf/wBLvqDVUy3qnQlM5jDL4jNbGQF9TGPN+mwEEIwDGtiIcEyBKCWwikvopKYxsFRWfrkFVh1+zZtaPUWC86/qWD97hGJqNxwZ6KtjKMBfnCd8+zEWqG37k11xm1cE8Gvf3ZqKE8V4UQ4Q/Ojwis3pGeUALbJeKCDruO4oTfhX1xfozDHxNslBGsMthSp7mnEqiV5VhxVCYDsbtILh/Z6DimqPYx5L6Ag2iwGB0g7mjOjETQTSwcbJ0WrkgYnsc4ovAJifbEb/ICRfWcT4BPHKzmY1yQ/9HF3Jg/Yp/suEVgraIFzVs2B97vCNDKWqT5jVSOKP7b+EKt3BEALx6QxJKtm+q81dHcEc8tW4LQL0UMH8gHz7rd5XRC3yt1kQJ4xhKR1OlG4NefC8rHHqRGOATlyJV+/gBMKMIS7SK/t5q8UR77DEuI10G6XgD78FkgXyMHze8Kr/nVM9boV+UgUjlFb/Z12oYxE5pNsbBe/2kNxceABYTLSKYbPaxzUimpA42hJMVthE56zCZu36vObmgmMTXxTDNApWOZvp/I1sYPlxXv1gA7ksHpBlxwYcKbgNW+aVZdYMrFmAx6FXdUO6mZFO4JNUxZJS1sFwDY6+voCtXEvUp8jv6qjomYe0UC+St6eolu4Mk2n+90+KFE5ZsxSvVpsUfja1Z+ggfxG138b4Dwln/ouIH05WcYbojnVgj8tpZ7nR+K11OefK4RtI8I7P1LAlg0R4B0WRYLoNRULUFpnka5G8unbfIwShVLbgvvpyPIEBvExBCvIZ4tkFrRVp7V9w4igbY0hhvMHm2nVvANzDnJmiobh0NqbWKhfPwQyb/D+GX/BmCsZIPst5t56Ms+xyHE/teZoWnZGD5IfiI6Egjx2IntifqRAG7Bd7dkZOW+ouu4g5SBfVa6BKXRitPY2Nw4kecpvQ2HFbUSgJ9dL1XZsUomqPx/yAB8VKtMbgQOOhUpCU8b4+zLvNXASBf90jfK+xa490y74m1Oyi5ffhRP4zIjdo3MgLouzNL+WyRgbjdAjB2htGvT92sMg7+E2sY+ltKGvHQE+Cg7CwsC8ads5mkEZ2gBXx5T6AKqA7Vg+UjEG9vrhavlXu1jm1mneMkVV3DP/qJD9Ex4tTTN0Sl6iM0Ok8QOKlS1kSPP//DR4ixYUtujjxAv8cRd3FbWcBOo2z9KA1teJDCBL2c3Sf+Qn0rHzv7jvQoj2JZ1mr3ZYcm6USlO5jowgGY9XgdKlp8hXuAL8m36BVfD+yBcBY4jiXc67kJiSFiRpX6B7yPbObPY8o+3mukOwMX4cNg6wBSqxZKRQEX7ZpRp2HbrxuAF6TM8oKogsc2Wn1miUQy1yMQ19fDhejMNbXcy2XcgQiBd89F+vJAcYuqJ0/4oKgY4ElP4eXdMWO9gRCPNV8yUF2bb0cMN6FbrkCMkuvLiYWja8884KKa7ZyYirghgo01lM7vWLRBcfJll+v0g6zBqzAqPVFQjadG4N7lkGb7cBJIDhKgjzwuCS4RzKbZtnArMhaD3gvPYBPJitQjUvvvaHDdxF1qP/guzUvjyofYSAVQ73+urarjPJQEm0jsrERJwMhdaqu8DHtTyO41ZcdY1JyvXeZ43UKZfEQAyOHGhufd5MzHfbYw=='
-$done({ body: JSON.stringify(body) });
-
+(async funciton main(){
+      const body = JSON.parse($response.body)
+      $.log(body.data)
+      const dedata = await decryptAES_CBC(body.data)
+      const obj = JSON.parse(dedata)
+      obj.data.nickname = '小白破解'
+      obj.isVip = true
+      body.data = await encryptAES_CBC(JSON.stringify(obj))
+      $.log(body.data)
+      $done({ body: JSON.stringify(body) })
+      
+})()
 function Env(name, opts) {
   class Http {
     constructor(env) {
@@ -917,4 +923,72 @@ function Env(name, opts) {
       }
     }
   })(name, opts)
+}
+
+async function decryptAES_CBC(encryptedData) {
+    // 将 base64 编码的密钥和 IV 转换为 Uint8Array
+    const keyBuffer = Uint8Array.from(atob('MmFjZjdlOTFlOTg2NDY3Mw=='), c => c.charCodeAt(0));
+    const ivBuffer = Uint8Array.from(atob('MWMyOTg4MmQzZGRmY2ZkNg=='), c => c.charCodeAt(0));
+    const encryptedBuffer = Uint8Array.from(atob(encryptedData), c => c.charCodeAt(0));
+
+    // 导入密钥
+    const cryptoKey = await crypto.subtle.importKey(
+        "raw",
+        keyBuffer,
+        {name: "AES-CBC"},
+        false,
+        ["decrypt"]
+    );
+
+    // 解密数据
+    try {
+        const decryptedBuffer = await crypto.subtle.decrypt(
+            {name: "AES-CBC", iv: ivBuffer},
+            cryptoKey,
+            encryptedBuffer
+        );
+
+        // 将解密后的数据转换为字符串
+        const decoder = new TextDecoder();
+        // 将解密后的字符串解析为 JSON 对象
+        return decoder.decode(decryptedBuffer);
+    } catch (e) {
+        console.error("解密或解析失败:", e);
+        return null;
+    }
+}
+
+async function encryptAES_CBC(plainText) {
+    // 将 base64 编码的密钥和 IV 转换为 Uint8Array
+    const keyBuffer = Uint8Array.from(atob('MmFjZjdlOTFlOTg2NDY3Mw=='), c => c.charCodeAt(0));
+    const ivBuffer = Uint8Array.from(atob('MWMyOTg4MmQzZGRmY2ZkNg=='), c => c.charCodeAt(0));
+
+    // 创建一个加密用的 CryptoKey 对象
+    const cryptoKey = await crypto.subtle.importKey(
+        "raw",
+        keyBuffer,
+        {name: "AES-CBC"},
+        false,
+        ["encrypt"]
+    );
+
+    // 将明文转换为 ArrayBuffer
+    const encoder = new TextEncoder();
+    const plainBuffer = encoder.encode(plainText);
+
+    // 加密数据
+    try {
+        const encryptedBuffer = await crypto.subtle.encrypt(
+            {name: "AES-CBC", iv: ivBuffer},
+            cryptoKey,
+            plainBuffer
+        );
+
+        // 将加密后的数据转换为 base64 编码的字符串
+        const encryptedArray = new Uint8Array(encryptedBuffer);
+        return btoa(String.fromCharCode(...encryptedArray));
+    } catch (e) {
+        console.error("加密失败:", e);
+        return null;
+    }
 }
