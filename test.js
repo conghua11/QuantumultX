@@ -7,7 +7,7 @@
 
 [Script]
 
-http-response https://wapi1.haijbpi1.com/api.php/api/user/userInfo requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/text.js, tag=测试
+http-response https://wapi1.haijbpi1.com/api.php/api/user/userInfo requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/test.js, tag=测试
 
 [MITM]
 
