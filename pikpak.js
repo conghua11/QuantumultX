@@ -3,7 +3,7 @@
 #!name = PIKPAK
 #!desc = 解锁本地VIP
 #!author = 小白
-#!date = 2024-05-19
+#!date = 2024-09-12
 
 [Script]
 # PIKPAK
