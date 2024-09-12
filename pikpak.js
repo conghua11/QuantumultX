@@ -75,13 +75,11 @@ if (url.indexOf(URL4) !== -1) {
 }
 if (url.indexOf(URL5) !== -1){
     const body = JSON.parse($response.body);
-    body = {
-  "invited_nums": 999,
-  "invited_days": 9999,
-  "add_days": 9999,
-  "join_vip_days": 9999,
-  "invited_join_days": 9999,
-  "join_vip_nums": 999
-}
-$done({body: JSON.stringify(body)});
+    body.invited_nums = 999,
+    body.invited_days = 9999,
+    body.add_days = 9999,
+    body.join_vip_days = 9999,
+    body.invited_join_days = 9999,
+    body.join_vip_nums = 999
+    $done({body: JSON.stringify(body)});
 }
