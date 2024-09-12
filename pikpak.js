@@ -8,7 +8,7 @@
 [Script]
 # PIKPAK
 http-response ^https:\/\/api-drive\.mypikpak\.com\/(vip\/v\d\/(vip\/info|allSubscriptionStatus|space\/list)|drive\/v\d\/about\?space) requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/pikpak.js, tag=PIKPAK
-http-response https://api-drive.mypikpak.com/vip/v1/activity/inviteInfo requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/pikpak.js, tag=PIKPAK
+http-response https://api-drive.mypikpak.com/vip/v1/activity/inviteInfo requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/pikpak.js, tag=PIKPAK邀请
 [Mitm]
 hostname = api-drive.mypikpak.com
 ****************************/
