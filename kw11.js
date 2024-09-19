@@ -12,7 +12,7 @@
 // @Suitable          自行观看“# > ”注释内容
 // @Attention         如需引用请注明出处，谢谢合作！
 // @Version           V2.0.45
-// @ScriptURL         https://js.chmg9999.top/kuwo.js
+// @ScriptURL         https://raw.githubusercontent.com/conghua11/QuantumultX/refs/heads/main/kw11.js
 // ==/UserScript==
 
 
@@ -37,33 +37,33 @@ https?:\/\/wapi\.kuwo\.cn\/openapi\/v1\/app\/pasterAdvert url reject-200
 # > 应用内弹窗及右下角@ddgksf2013
 ^https?:\/\/mobilead\.kuwo\.cn\/ url reject-200
 # > 搜索框处理@ddgksf2013
-https?:\/\/searchrecterm\.kuwo\.cn\/recterm\.s url script-response-body https://js.chmg9999.top/kuwo.js
+https?:\/\/searchrecterm\.kuwo\.cn\/recterm\.s url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/refs/heads/main/kw11.js
 # > 会员页广告@ddgksf2013
-https?:\/\/appi\.kuwo\.cn\/kuwopay\/vip-tab\/page\/cells url script-response-body https://js.chmg9999.top/kuwo.js
+https?:\/\/appi\.kuwo\.cn\/kuwopay\/vip-tab\/page\/cells url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/refs/heads/main/kw11.js
 # > 会员页顶部广告tab@ddgksf2013
-https?:\/\/appi\.kuwo\.cn\/kuwopay\/vip-tab\/setting url script-response-body https://js.chmg9999.top/kuwo.js
+https?:\/\/appi\.kuwo\.cn\/kuwopay\/vip-tab\/setting url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/refs/heads/main/kw11.js
 # > 开屏广告@ddgksf2013
-https?:\/\/rich\.kuwo\.cn\/AdService url script-response-body https://js.chmg9999.top/kuwo.js
+https?:\/\/rich\.kuwo\.cn\/AdService url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/refs/heads/main/kw11.js
 # > 数字专辑@ddgksf2013
-^https?:\/\/musicpay\.kuwo\.cn\/music\.pay\?newver url script-response-body https://js.chmg9999.top/kuwo.js
+^https?:\/\/musicpay\.kuwo\.cn\/music\.pay\?newver url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/refs/heads/main/kw11.js
 # > 听书权限接口1@ddgksf2013
-^https?:\/\/[a-z0-9A-Z]+\.(kuwo|lrts)\.(cn|me)\/a\.p url script-response-body https://js.chmg9999.top/kuwo.js
+^https?:\/\/[a-z0-9A-Z]+\.(kuwo|lrts)\.(cn|me)\/a\.p url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/refs/heads/main/kw11.js
 # > 听书权限接口2@ddgksf2013
-^https?:\/\/.*\.kuwo\.cn\/v2\/api\/pay\/vip\/extraVipStatus url script-response-body https://js.chmg9999.top/kuwo.js
+^https?:\/\/.*\.kuwo\.cn\/v2\/api\/pay\/vip\/extraVipStatus url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/refs/heads/main/kw11.js
 # > 新版vip接口1@ddgksf2013
-^https?:\/\/vip1\.kuwo\.cn\/vip\/enc\/user\/vip\?op=ui url script-response-body https://js.chmg9999.top/kuwo.js
+^https?:\/\/vip1\.kuwo\.cn\/vip\/enc\/user\/vip\?op=ui url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/refs/heads/main/kw11.js
 # > 新版vip接口2@ddgksf2013
-^https?:\/\/vip1\.kuwo\.cn\/vip\/v2\/userbase\/vip\?op=get url script-response-body https://js.chmg9999.top/kuwo.js
+^https?:\/\/vip1\.kuwo\.cn\/vip\/v2\/userbase\/vip\?op=get url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/refs/heads/main/kw11.js
 # > 旧版vip接口@ddgksf2013
-^https?:\/\/vip1\.kuwo\.cn\/vip\/v2\/user\/vip\?(uid|op=ui) url script-response-body https://js.chmg9999.top/kuwo.js
+^https?:\/\/vip1\.kuwo\.cn\/vip\/v2\/user\/vip\?(uid|op=ui) url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/refs/heads/main/kw11.js
 # > 皮肤解锁@ddgksf2013
-^https?:\/\/vip1\.kuwo\.cn\/vip\/v2\/theme url script-response-body https://js.chmg9999.top/kuwo.js
+^https?:\/\/vip1\.kuwo\.cn\/vip\/v2\/theme url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/refs/heads/main/kw11.js
 # > 下载接口@ddgksf2013
-^https?:\/\/musicpay\.kuwo\.cn\/music\.pay\?ui url script-request-header https://js.chmg9999.top/kuwo.js
+^https?:\/\/musicpay\.kuwo\.cn\/music\.pay\?ui url script-request-header https://raw.githubusercontent.com/conghua11/QuantumultX/refs/heads/main/kw11.js
 # > 我的页面卡片@ddgksf2013
-^https?:\/\/appi.kuwo.cn/kuwopay/personal/cells url script-response-body https://js.chmg9999.top/kuwo.js
+^https?:\/\/appi.kuwo.cn/kuwopay/personal/cells url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/refs/heads/main/kw11.js
 # > 音乐播放接口@ddgksf2013
-^https:\/\/[a-z0-9A-Z]+\.kuwo\.cn\/mobi\.s\?f=kwxs url script-response-body https://js.chmg9999.top/kuwo.js
+^https:\/\/[a-z0-9A-Z]+\.kuwo\.cn\/mobi\.s\?f=kwxs url script-response-body https://raw.githubusercontent.com/conghua11/QuantumultX/refs/heads/main/kw11.js
 
 
 [mitm]
