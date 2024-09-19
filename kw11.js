@@ -98,11 +98,20 @@ if ($request.url.indexOf('/mobi.s') !== -1) {
         let responseBody = $response['body'];
         const musicKey = $['getval']('Kw_MusicKey');
         $.log(musicKey)
-        await $['http']['get']({
-            url: 'https://mobi.kuwo.cn/mobi.s?f=web&source=kwplayer_ar_5.1.0.0_B_jiakong_vh.apk&type=convert_url_with_sign&br=2000kflac&rid=' + musicKey
-        }).then(response => {
-            let data = response.body;
-        });
+        let PlayUrl = 'https://mobi.kuwo.cn/mobi.s?f=web&source=kwplayer_ar_5.1.0.0_B_jiakong_vh.apk&type=convert_url_with_sign&br=2000kflac&rid=' + musicKey
+        !(async () => {
+		if ( musicKey ) {
+			await $.http
+			.get({
+				url: PlayUrl + musicKey
+			})
+			.then((response) => {
+					body = response.body
+			})
+		}else{
+			$.msg('获取歌曲ID错误,歌曲解锁失败!!!')
+		}
+		musicKey = ""
         $.log(data)
         $['setdata']('', 'Kw_MusicKey');
         showMonthlyPopup();
