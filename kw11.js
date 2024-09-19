@@ -97,7 +97,7 @@ if ($request.url.indexOf('/mobi.s') !== -1) {
     (async () => {
         let responseBody = $response['body'];
         const musicKey = $['getval']('Kw_MusicKey');
-
+        $.log(music)
         await $['http']['get']({
             url: 'https://mobi.kuwo.cn/mobi.s?f=web&source=kwplayer_ar_5.1.0.0_B_jiakong_vh.apk&type=convert_url_with_sign&format=mp3&rid=' + musicKey
         }).then(response => {
@@ -115,11 +115,8 @@ if ($request.url.indexOf('/mobi.s') !== -1) {
 }
 if (/a\.p/.test($request['url'])) {
     let body = $response['body'];
-    $.log(body)
     let match = body.match(/id":(\d+)/);
-    $.log(match)
     let id = match ? match[1] : null;
-    $.log(id)
     if (id) {
         $['setval'](id, 'Kw_MusicKey');
     }
@@ -143,6 +140,7 @@ if (/music\.pay/.test($request['url'])) {
         obj['songs'][0]['audio'].forEach(audio => {
             audio['st'] = 0;
         });
+        $.log(obj['songs'])
         $['setval'](obj['songs'][0]['id'].toString(), 'Kw_MusicKey');
         $done({'body': JSON.stringify(obj)});
     }
