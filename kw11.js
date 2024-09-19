@@ -98,6 +98,7 @@ if ($request.url.indexOf('/mobi.s') !== -1) {
     const musicKey = $['getval']('Kw_MusicKey');
     $.log(musicKey)
     let PlayUrl = 'https://mobi.kuwo.cn/mobi.s?f=web&source=kwplayer_ar_5.1.0.0_B_jiakong_vh.apk&type=convert_url_with_sign&br=2000kflac&rid=' + musicKey
+    $.log(PlayUrl)    
     !(async () => {
         if (musicKey) {
             await $.http
