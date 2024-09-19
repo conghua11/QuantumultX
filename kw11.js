@@ -136,6 +136,7 @@ if (/a\.p/.test($request['url'])) {
 }
 if (/music\.pay/.test($request['url'])) {
     if (method === 'POST' && $response['body'].includes('audio')) {
+        $.log($response['body'])
         let obj = JSON.parse($response['body']);
         obj['songs'][0]['audio'].forEach(audio => {
             audio['st'] = 0;
