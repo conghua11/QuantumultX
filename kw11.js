@@ -186,12 +186,56 @@ if (/vip\/v2\/theme/.test($request['url'])) {
     $done({'body': JSON.stringify(obj)});
 }
 if (/vip\/v2\/userbase\/vip/.test($request['url'])) {
-    let body = $response['body'];
-    let obj = JSON.parse(body);
-    obj['data']['vipLuxuryExpire'] = 4000000000000;
-    obj['data']['time'] = 1961170340993;
-    $done({'body': JSON.stringify(obj)});
-}
+        let body = $response['body'];
+        let obj = JSON.parse(body);
+        if (obj['data']?.['vipui']) {
+            obj['data']['vipui'] = {
+                'vipIcon': 'https://image.kuwo.cn/fe/f2d09ac0-b959-404f-86fa-dc65c715c0e96.png',
+                'growthValue': '21600',
+                'vipTag': 'VIP7',
+                'vipOverSeasExpire': '0',
+                'time': '4000000000000',
+                'goSvipPage': '1',
+                'isNewUser': '1',
+                "openBtnText":"永久会员",
+                'vipmIcon': 'https://image.kuwo.cn/fe/34ad47f8-da7f-43e4-abdc-e6c995666368yyb.png',
+                'svipIcon': 'https://image.kuwo.cn//fe//13e4f930-f8bc-4b86-8def-43cbc3c7d86c7.png',
+                'vipmExpire': 4000000000000,
+                'biedSong': '1',
+                'luxuryIcon': 'https://image.kuwo.cn/fe/2fae68ff-de2d-4473-bf28-8efc29e44968vip.png',
+                'userType': '3',
+                'isYearUser': '2',
+                'vip3Expire': '0',
+                'experienceExpire': '0',
+                'luxAutoPayUser': '2',
+                'biedAlbum': '1',
+                'vipLuxuryExpire': 4000000000000,
+                'vipmAutoPayUser': '2',
+                'svipAutoPayUser': '2',
+                'vipExpire': 4000000000000,
+                'svipExpire': 4000000000000
+            };
+        }
+        if (obj['data']?.['tsui']) {
+            obj['data']['tsui'] = '{"timestamp":1674205529,"packs":{"type":0,"end":4000000000,"period":1,"bought_vip":1,"bought_vip_end":4000000000},"result":"ok"}';
+        }
+        body = JSON.stringify(obj);
+        $done({'body': body});
+    }
+if (/vip\/v2\/user\/vip/.test($request['url'])) {
+        let body = $response['body'];
+        let obj = JSON.parse(body);
+        obj['data']['isNewUser'] = '2';
+        obj['data']['vipLuxuryExpire'] = 4000000000000;
+        obj['data']['time'] = 1961170340993;
+        obj['data']['isYearUser'] = '2';
+        obj['data']['vipmExpire'] = 4000000000000;
+        obj['data']['vipOverSeasExpire'] = 4000000000000;
+        obj['data']['vipExpire'] = 4000000000000;
+        obj['data']['vip3Expire'] = '4000000000000';
+        body = JSON.stringify(obj);
+        $done({'body': obj});
+    }
 if (/v2\/api\/pay\/vip\/extraVipStatus/.test($request['url'])) {
     let body = $response['body'];
     let obj = JSON.parse(body);
