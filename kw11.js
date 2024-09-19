@@ -79,26 +79,10 @@ const $ = new Env('kuwo')
 
 let method = $request['method'];
 
-function showMonthlyPopup() {
-    const cuttlefishMsg = 'Cuttlefishの自留地';
-    const alertMsg = '脚本免费使用，收费请举报！';
-    const link = 'https://t.me/ddgksf2021';
-
-    const currentMonth = new Date().getMonth();
-    const lastPopupMonth = $['getval']('lastPopupMonth');
-
-    if (lastPopupMonth === null || lastPopupMonth !== currentMonth) {
-        $.msg(cuttlefishMsg, '', alertMsg, {'open-url': link});
-        $['setval'](currentMonth.toString(), 'lastPopupMonth');
-    }
-}
-
 if ($request.url.indexOf('/mobi.s') !== -1) {
     let body = $response['body'];
     const musicKey = $['getval']('Kw_MusicKey');
-    $.log(musicKey)
     let PlayUrl = 'https://mobi.kuwo.cn/mobi.s?f=web&source=kwplayer_ar_5.1.0.0_B_jiakong_vh.apk&type=convert_url_with_sign&br=2000kflac&rid='
-    $.log(PlayUrl)    
     !(async () => {
         if (musicKey) {
             await $.http
@@ -111,9 +95,7 @@ if ($request.url.indexOf('/mobi.s') !== -1) {
         } else {
             $.msg('获取歌曲ID错误,歌曲解锁失败!!!')
         }
-        $.log(body)
         $['setdata']('', 'Kw_MusicKey');
-        showMonthlyPopup();
         $['done']({'body': body});
     })().catch(error => console['log']('error: ' + error));
 }
@@ -140,12 +122,10 @@ if (/a\.p/.test($request['url'])) {
 }
 if (/music\.pay/.test($request['url'])) {
     if (method === 'POST' && $response['body'].includes('audio')) {
-        $.log($response['body'])
         let obj = JSON.parse($response['body']);
         obj['songs'][0]['audio'].forEach(audio => {
             audio['st'] = 0;
         });
-        $.log(obj['songs'][0]['id'])
         $['setval'](obj['songs'][0]['id'].toString(), 'Kw_MusicKey');
         $done({'body': JSON.stringify(obj)});
     }
