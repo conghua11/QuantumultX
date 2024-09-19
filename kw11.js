@@ -189,9 +189,8 @@ if ($request['url'].indexOf('kuwopay/vip-tab/setting') !== -1) {
 }
 if ($request['url'].indexOf('rich.kuwo.cn/AdService') !== -1) {
     let body = $response['body'];
-    let data = JSON.parse(body);
-    data = data.replace(/"url"/g, '"URL"').replace(/last_time":\d+/g, 'last_time":0');
-    $done({'body': JSON.stringify(data)});
+    body = body.replace(/"url"/g, '"URL"').replace(/last_time":\d+/g, 'last_time":0');
+    $done({'body': JSON.stringify(body)});
 }
 if (/vip\/v2\/theme/.test($request['url'])) {
     let body = $response['body'];
