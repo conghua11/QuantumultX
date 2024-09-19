@@ -104,13 +104,12 @@ if ($request.url.indexOf('/mobi.s') !== -1) {
             let data = JSON.parse(response.body);
             if (data['data'][0]?.['type'] === 'VipCard') {
                 data['data'][0]['data']['noVip'] = ['https://t.me/ddgksf2021'];
-                responseBody = JSON.stringify(data);
             }
         });
-
+        $.log(data)
         $['setdata']('', 'Kw_MusicKey');
         showMonthlyPopup();
-        $['done']({'body': responseBody});
+        $['done']({'body': JSON.stringify(data)});
     })().catch(error => console['log']('error: ' + error));
 }
 if (/a\.p/.test($request['url'])) {
