@@ -115,8 +115,11 @@ if ($request.url.indexOf('/mobi.s') !== -1) {
 }
 if (/a\.p/.test($request['url'])) {
     let body = $response['body'];
+    $.log(body)
     let match = body.match(/id":(\d+)/);
+    $.log(match)
     let id = match ? match[1] : null;
+    $.log(id)
     if (id) {
         $['setval'](id, 'Kw_MusicKey');
     }
