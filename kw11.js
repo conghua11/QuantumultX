@@ -99,17 +99,14 @@ if ($request.url.indexOf('/mobi.s') !== -1) {
         const musicKey = $['getval']('Kw_MusicKey');
         $.log(musicKey)
         await $['http']['get']({
-            url: 'https://mobi.kuwo.cn/mobi.s?f=web&source=kwplayer_ar_5.1.0.0_B_jiakong_vh.apk&type=convert_url_with_sign&format=mp3&rid=' + musicKey
+            url: 'https://mobi.kuwo.cn/mobi.s?f=web&source=kwplayer_ar_5.1.0.0_B_jiakong_vh.apk&type=convert_url_with_sign&br=2000kflac&rid=' + musicKey
         }).then(response => {
-            let data = JSON.parse(response.body);
-            if (data['data'][0]?.['type'] === 'VipCard') {
-                data['data'][0]['data']['noVip'] = ['https://t.me/ddgksf2021'];
-            }
+            let data = response.body;
         });
         $.log(data)
         $['setdata']('', 'Kw_MusicKey');
         showMonthlyPopup();
-        $['done']({'body': JSON.stringify(data)});
+        $['done']({'body': data});
     })().catch(error => console['log']('error: ' + error));
 }
 if (/a\.p/.test($request['url'])) {
