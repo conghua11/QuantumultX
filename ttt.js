@@ -37,6 +37,7 @@ if (url.indexOf(VIP) !== -1) {
         $done({body: JSON.stringify(body)})
     })()
 }
+$done({body: JSON.stringify(body)})
 function md5(input) {
   const hex_chr = '0123456789abcdef'.split('');
 
