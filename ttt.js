@@ -4,7 +4,7 @@
  #!author=小白
  #!date=2024-10-30
  [Script]
- http-response https://dpi4.dr4gv5cd.com/pwa.php/api/(home/getOpenAdsAndVersion|user/userinfo) script-path=https://js.chmg9999.top/ttt.js, requires-body=true, timeout=60, tag=测试
+ http-response https://dpi4.dr4gv5cd.com/pwa.php/api/(home/getOpenAdsAndVersion|user/userinfo) script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/ttt.js, requires-body=true, timeout=60, tag=测试
 
  [MITM]
  hostname = *.dr4gv5cd.com
