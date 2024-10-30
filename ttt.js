@@ -10,7 +10,7 @@
  hostname = *.dr4gv5cd.com
  ***********************************/
 const body = JSON.parse($response.body);
-let url = "undefined" !== typeof $request ? $request.url : "";
+let url = $request.url
 let AD = '/home/getOpenAdsAndVersion'
 let VIP = '/user/userinfo'
 if (url.indexOf(AD) !== -1) {
