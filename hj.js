@@ -7,7 +7,7 @@
 
 [Script]
 
-http-requset https://api.iamok.in/api/Support/GetRuntimeData requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/hj.js, tag=测试
+http-request https://api.iamok.in/api/Support/GetRuntimeData requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/hj.js, tag=测试
 
 [MITM]
 
