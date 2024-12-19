@@ -14,7 +14,7 @@ http-response https://api\.iamok\.in/api/Sn/QuerySn\?sn=.* requires-body=1, max-
 hostname = api.iamok.in
 **************************************/
 
-const body = JSON.parse($response.body)
+const body = $response.body
 const data = {"ID": "7593", "Kn": "e9813ff6-667c-4a38-99cf-e77454be1f02", "Pt": "allvideo-3650", "Ds": "3650",
         "St": "2024-12-19 16:24:00", "Dd": false, "Note": "电报分享", "CreateTime": "2024-12-14 00:00:01",
         "OwnerCode": "黑猫", "Status": "已激活", "Price": "13.8", "PriceUnit": "RMB"}
