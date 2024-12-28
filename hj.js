@@ -7,7 +7,7 @@
 #!data=2024-12-28
 
 [Script]
-http-request ^https?:\/\/www\.netflix\.com\/browse script-update-interval=0, script-path=script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/hj.js, tag=Netflix Headers
+http-request ^https?:\/\/www\.netflix\.com\/browse script-update-interval=0, script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/hj.js, tag=Netflix Headers
 
 [MITM]
 
