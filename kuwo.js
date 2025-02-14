@@ -93,6 +93,8 @@ const handlers = {
 
 // 根据URL匹配对应的处理函数
 for (const [key, pattern] of Object.entries(urlPatterns)) {
+    env.log(`key信息:${key}`)
+    env.log(`pattern信息:${pattern}`)
     if (pattern.test(reqUrl)) {
         (async () => {
             await handlers[key]();
