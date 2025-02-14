@@ -81,6 +81,7 @@ const handlers = {
     "vipTheme": handleVipTheme,
     "advert": handleAdvert,
     "bottomTab": handleBottomTab,
+    "indexTopAd": handleIndexTopAd,
     "myPageVipBox": handleMyPageVipBox,
     "payInfo": handlePayInfo,
     "bookRadio": handleBookRadio,
