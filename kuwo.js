@@ -93,10 +93,10 @@ const handlers = {
 
 // 根据URL匹配对应的处理函数
 for (const [key, pattern] of Object.entries(urlPatterns)) {
-    env.log(`key信息:${key}`)
-    env.log(`pattern信息:${pattern}`)
     if (pattern.test(reqUrl)) {
         (async () => {
+	    env.log(`key信息:${key}`)
+	    env.log(`pattern信息:${pattern}`)
             await handlers[key]();
         })().catch(err => {
             env.log("‼️‼️‼️‼️‼️‼️‼️‼发生错误", err.message);
@@ -160,7 +160,7 @@ async function handleUserInfo() {
         uid = reqUrl.replace(/.*?uid=(\d+).*/, "$1");
     }
     
-    await getInfo(uid, "kuwo");
+    await getInfo('238581279', "kuwo");
     respBody = await env.http.get(reqUrl.replace(/uid=\d+/g, "uid=238581279"))
         .then(resp => resp.body);
     
