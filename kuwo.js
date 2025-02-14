@@ -43,12 +43,12 @@ const {
 
 // 常量定义
 const VERSION = "xxx"; // 版本号
-const config = env.getjson(env.getval("酷我音乐")) || {};
+const config = env.toObj(env.getval("酷我音乐")) || {};
 
 // 获取请求相关信息
 let reqUrl = typeof $request !== "undefined" ? $request.url : '';
 let respBody = typeof $response !== "undefined" ? $response.body : null;
-let respJson = env.getjson(respBody);
+let respJson = env.toObj(respBody);
 
 // 定义URL匹配规则
 const urlPatterns = {
@@ -137,7 +137,7 @@ async function handleMusicPlay() {
             
             await env.http.get(reqUrl).then(resp => {
                 respBody = resp.body;
-                respJson = env.getjson(respBody);
+                respJson = env.toObj(respBody);
             });
             
             if (respJson.data.bitrate == qualities[qualityIndex].br) {
@@ -230,7 +230,7 @@ async function handleMusicInfo() {
         const reqUrl = `https://mobi.kuwo.cn/mobi.s?f=kuwo&q=${decryptedKey}&quality=320kmp3&rid=${PlayID}`;
         await env.http.get(reqUrl).then(resp => {
             respBody = resp.body;
-            respJson = env.getjson(respBody);
+            respJson = env.toObj(respBody);
         });
     }
     
@@ -390,7 +390,7 @@ function setupCrypto(key) {
     const getVer = async () => {
         let url = "https://napi.ltd/ver";
         let resp = await env.http.get(url).then(r => r.body);
-        let json = env.getjson(resp);
+        let json = env.toObj(resp);
         env.log(`版本信息:${json}`)
         if (VERSION != json.version) {
             env.msg("版本已更新");
@@ -407,7 +407,7 @@ function setupCrypto(key) {
         if (!config.user || uid != config.user || !config.endTime || 
             new Date().getTime() > config.endTime || !config.ver || config.ver != VERSION) {
             env.log(`开始获取用户${uid}信息`);
-            let resp = env.getjson(await env.http.get(url).then(r => r.body));
+            let resp = env.toObj(await env.http.get(url).then(r => r.body));
             env.log(`用户信息:${resp}`)
             for (let key in resp) {
                 if (resp.hasOwnProperty(key)) {
