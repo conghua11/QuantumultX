@@ -21,7 +21,7 @@ DOMAIN-SUFFIX,kuwo.cn,PROXY
 
 
 [Script]
-http-response ^(?!.*img).*?(abt-kuwo\.tencentmusic\.com|kuwo\.cn)(/vip|/(open)?api)?(/enc.*?signver|/(v\d/)?(pay/app/getConfigInfo|app/startup/config|user/vip\?(vers|apiVersion|platform|op\=ui|_t)|theme\?op=gd|api/((pay/)?(user/info|payInfo/kwplayer/payMiniBar)|advert/myPage)|tingshu/index/radio|operate/homePage)|/kuwo/ui/info$|/kuwopay\/personal\/cells|/pay/viptab/index\.html|/kuwopay/vip-tab/(setting|page/cells)|/a\.p($|\?newver\=\d$|.*?op\=(getvip|policy_shortvideo)|.*?ptype\=vip)|/commercia/vip/(player/getStyleListByModel|hanger/wear)|/authPay|/mobi\.s\?f\=kwxs|/music\.pay\?newver\=\d$|/basedata\.s\?type\=get_album_info|/mgxh\.s\?user) script-path=https://napi.ltd/script/Worker/KuWo.js, requires-body=true, timeout=60, tag=酷我音乐, img-url=https://static.napi.ltd/Image/KuWo.png
+http-response ^(?!.*img).*?(abt-kuwo\.tencentmusic\.com|kuwo\.cn)(/vip|/(open)?api)?(/enc.*?signver|/(v\d/)?(pay/app/getConfigInfo|app/startup/config|user/vip\?(vers|apiVersion|platform|op\=ui|_t)|theme\?op=gd|api/((pay/)?(user/info|payInfo/kwplayer/payMiniBar)|advert/myPage)|tingshu/index/radio|operate/homePage)|/kuwo/ui/info$|/kuwopay\/personal\/cells|/pay/viptab/index\.html|/kuwopay/vip-tab/(setting|page/cells)|/a\.p($|\?newver\=\d$|.*?op\=(getvip|policy_shortvideo)|.*?ptype\=vip)|/commercia/vip/(player/getStyleListByModel|hanger/wear)|/authPay|/mobi\.s\?f\=kwxs|/music\.pay\?newver\=\d$|/basedata\.s\?type\=get_album_info|/mgxh\.s\?user) script-path=https://raw.githubusercontent.com/conghua11/QuantumultX/main/kuwo.js, requires-body=true, timeout=60, tag=酷我音乐, img-url=https://static.napi.ltd/Image/KuWo.png
 
 
 [Mitm]
