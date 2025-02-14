@@ -43,7 +43,7 @@ const {
 
 // 常量定义
 const VERSION = "xxx"; // 版本号
-const config = env.getjson(env.getdata("酷我音乐")) || {};
+const config = env.getjson(env.getval("酷我音乐")) || {};
 
 // 获取请求相关信息
 let reqUrl = typeof $request !== "undefined" ? $request.url : '';
